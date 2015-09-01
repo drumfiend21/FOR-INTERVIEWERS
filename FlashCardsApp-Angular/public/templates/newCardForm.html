@@ -1,0 +1,57 @@
+            <form id="addCard" name="newCardForm" ng-submit="newCardForm.$valid && submitCard()">
+                <br>
+                <!-- {{ newCardForm.$valid}} -->
+                <br>
+                <!-- {{ newCard | json }} -->
+                <br>
+                <H1>Create a New Card</H1>
+                <br>
+                <br>
+                <span>Category</span>
+                <error-message ng-show="newCardForm.category.$touched && newCardForm.category.$error.required">
+                    You need to select a category.
+                </error-message>
+                <select ng-model="newCard.category" required name="category">
+                    <option value="">--</option>
+                    <option value="MongoDB">MongoDB</option>
+                    <option value="Express">Express</option>
+                    <option value="Angular">Angular</option>
+                    <option value="Node">Node</option>
+                </select>
+                <br>
+                <br>
+                <span>Question</span>
+                <error-message ng-show="newCardForm.question.$touched && newCardForm.question.$error.required">
+                    Question is a required field.
+                </error-message>
+                <error-message ng-show="newCardForm.question.$error.minlength">
+                    Your question needs to be atleast 15 characters long.
+                </error-message>
+                <br>
+                <input ng-model="newCard.question" type="text" ng-minlength="15" required name="question"><br>
+                <br>
+                <span>Answer</span>
+                <error-message ng-show="newCardForm.Answer1.$error.maxlength">
+                    Your answer is too long.
+                </error-message>
+                <br>
+                <input ng-model="newCard.answers[0].text" required type="text" ng-maxlength="40" name="Answer1"><br>
+                <input ng-model="newCard.answers[0].correct" type="checkbox" value="Check">This the correct answer<br>
+                <br>
+                <span>Answer</span>
+                <error-message ng-show="newCardForm.Answer2.$error.maxlength">
+                    Your answer is too long.
+                </error-message>
+                <br>
+                <input ng-model="newCard.answers[1].text"  required ng-maxlength="40" type="text" name="Answer2"><br>
+                <input ng-model="newCard.answers[1].correct" type="checkbox" value="Check">This the correct answer<br>
+                <br>
+                <span>Answer</span>
+                <error-message ng-show="newCardForm.Answer3.$error.maxlength">
+                    Your answer is too long.
+                </error-message>
+                <br>
+                <input ng-model="newCard.answers[2].text"  required ng-maxlength="40" type="text" name="Answer3"><br>
+                <input ng-model="newCard.answers[2].correct" type="checkbox" value="Check">This the correct answer<br>
+                <button type="submit" >Submit Card!</button>
+            </form>

@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block content %}
+	<br>
+	<h4>DISAMBIGUATION: Multiple pages on the subject<h4>
+	<hr>
+	{% for page in pages%}
+
+		<a href="{{page.sec_url}}"><h1>{{page.title}}</h1></a>
+		{% for tag in page.tags %}<a href="/submit?tagSearch=%23{{tag}}">#{{tag}}</a>{% endfor %}
+		<hr>
+	    <p>{{page.body | marked}}</p>
+	
+	{% endfor%}
+
+{% endblock %}

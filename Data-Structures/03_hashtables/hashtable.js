@@ -1,0 +1,142 @@
+var LinkedList = function() {
+  this.head
+  this.tail
+}
+
+LinkedList.prototype.empty = function() {
+  return typeof this.head === 'undefined' && typeof this.tail === 'undefined'
+}
+
+LinkedList.prototype.addToTail = function(key, read) {
+  var newNode = new Node(key, read)
+  //empty
+  if(this.empty()) {
+    this.head = newNode
+    this.tail = newNode
+  } else {
+    this.tail.next = newNode
+    newNode.previous = this.tail
+    this.tail = newNode
+  }
+}
+
+LinkedList.prototype.addToHead = function(value) {
+  var newNode = new Node(value)
+  if(this.empty()) {
+    this.head = newNode
+    this.tail = newNode
+  } else {
+    this.head.previous = newNode
+    newNode.next = this.head
+    this.head = newNode
+  }
+}
+
+LinkedList.prototype.removeHead = function() {
+  if(this.empty()) return
+  var toReturn = this.head
+  if(this.head === this.tail) {
+    this.head = undefined
+    this.tail = undefined
+    return toReturn.value
+  }
+  this.head = this.head.next
+  this.head.previous = null
+  return toReturn.value
+}
+
+LinkedList.prototype.removeTail = function() {
+  if(this.empty()) return
+  var toReturn = this.tail
+  if(this.head === this.tail) {
+    this.head = undefined
+    this.tail = undefined
+    return toReturn.value
+  }
+  this.tail = this.tail.previous
+  this.tail.next = null
+  return toReturn.value
+}
+
+LinkedList.prototype.search = function(key) {
+  var _search = function(pos) {
+      if(typeof key === 'function'){
+          if(key(pos)) return pos;
+      }
+      if(pos.key == key) {
+          return pos;
+      }else if(!pos.next){
+          return null;
+      }else {
+          return _search(pos.next);
+      }
+  };
+  return _search(this.head)
+};
+
+var Node = function(key, value) {
+  this.key = key
+  this.value = value
+  this.next = null
+  this.previous = null
+}
+
+var linkedList = new LinkedList();
+
+var Hash = function(){
+	this.hashTable = [];
+
+	this.numBuckets = 25;
+	this.set = function(key, val){
+		if(typeof key !== "string"){
+			throw new Error ("Keys must be strings");
+		}
+        
+        linkedList.addToTail(key, val);
+	    var arr = this.hashTable[this._hash(key)];
+	    console.log(arr);
+	    arr.push(linkedList.search(key));
+	    console.log(arr);
+
+	    //if key exists in hashTable[24].indexOf(), then overwrite to new array
+	    //if hashTable[24]= [ foo, ofo]
+
+	    arr.forEach(function(obj){
+			if(obj.key === key){
+		
+		    obj.value = val;
+		
+		    }
+	    })
+	
+	}
+	this.get = function(key){
+		return linkedList.search(key).value;
+
+
+		// return this.hashTable[this._hash(key)];
+	}
+	this.hasKey = function(key){
+		var thing = false;
+		this.hashTable.forEach(function(arr){
+			arr.forEach(function(obj){
+			    if(obj.key === key){
+			        thing = true;
+			        return
+			    }
+			});
+
+		});
+		return thing;
+	}		
+	this._hash = function(str){
+		sum = 0;
+		for (var i = 0; i < str.length; i++) {
+			sum+=str.charCodeAt(i);
+		}
+		if(Array.isArray(this.hashTable[sum % this.numBuckets])!== true){
+		    this.hashTable[sum % this.numBuckets]= [];
+		}
+		return sum % this.numBuckets;
+	}
+}

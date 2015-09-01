@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block content %}
+	<h1>{{title}}</h1>
+	<div id="tags">
+		<p><strong>Tags: </strong></p>
+		    {% for tag in tags %}<a href="/submit?tagSearch=%23{{tag}}">#{{tag}}</a>{% endfor %}
+    </div>
+    <br>
+    <div id="options">
+	    <div id="tags">
+			<a href="/similars">Find Similar</a>
+		</div>
+		<div id="editButton">
+			<a href="/edit">Edit Page</a>
+		</div>
+		<div id="deleteButton">
+			<a href="/delete">Delete Page</a>
+		</div>
+
+	</div>
+	<hr>
+    <p>{{body | marked}}</p>
+
+{% endblock %}

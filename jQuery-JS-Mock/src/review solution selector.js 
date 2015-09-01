@@ -1,0 +1,71 @@
+var traverseDomAndCollectElements = function(matchFunc, startEl) {
+  var resultSet = [];
+  var children; 
+  if (typeof startEl === "undefined") {
+    startEl = document.body;
+  }
+  if(matchFunc(z)){
+    resultSet.push(z);
+  }
+  if(startEl.children.length !== 0 ){
+    children = [].slice.call(startEl.children);
+    children.forEach(function(childElement){
+      resultSet = resultSet.concat(traverseDomAndCollectElements(matchFunc, childElement));
+    }); 
+  }
+return resultSet;
+};
+
+var selectorTypeMatcher = function(selector) {
+  var zero = selector[0];
+
+  if (zero === "#")
+       return 'id';
+   if (zero=== ".")
+       return 'class';
+   if (selector.indexOf('.') !== -1)
+       return 'tag.class';
+   else return 'tag';
+};
+
+
+
+var matchFunctionMaker = function(selector) {
+  var selectorType = selectorTypeMatcher(selector);
+  var matchFunction;
+  if (selectorType === "id") {
+    matchFunction = function (el) {
+      return el.id.toLowerCase() === selector.slice(1).toLowerCase();
+    }; 
+
+  } else if (selectorType === "class") {
+    matchFunction = function (el) {
+      var className = selector.slice(1);
+      return el.classList.contains(className);
+    
+    }; 
+
+    
+  } else if (selectorType === "tag.class") {
+    // define matchFunction for tag.class
+      matchFunction = function (el) {
+        var parts = selector.split(".");  // index 0 will be tagName index 1 will be className
+        return el.tagName.toLowerCase() === parts[0].toLowerCase() 
+        && el.classList.contains(parts[1]);
+      }
+      
+  } else if (selectorType === "tag") {
+    // define matchFunction for tag
+    matchFunction = function (el) {
+      return el.tagName && (el.tagName.toLowerCase() === selector.toLowerCase());
+    };    
+  }
+  return matchFunction;
+};
+
+var $ = function(selector) {
+  var elements;
+  var selectorMatchFunc = matchFunctionMaker(selector);
+  elements = traverseDomAndCollectElements(selectorMatchFunc);
+  return elements;
+};

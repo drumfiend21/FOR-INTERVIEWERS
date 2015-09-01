@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+ 
+{% block content %}
+  
+  <div class="page-header">
+    <h1>{{ title }}</h1>
+  </div>
+  <div class="row">
+    <form action="/add/submit" method="post">
+      <div class="form-group">
+        <label for="exampleInputEmail1">PAGE TITLE</label>
+        <input name="title" type="" class="form-control" id="exampleInputEmail1" placeholder="">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">PAGE CONTENT</label>
+        <input name="content" type="" class="form-control" id="exampleInputPassword1" placeholder="">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">TAGS</label>
+        <input name="tags" type="" class="form-control" id="tagsinput" placeholder="example: #yourtag #anothertag">
+      </div>
+      <button id="addButton" type="submit" class="btn btn-default">SUBMIT</button>
+    </form>
+  </div>
+    
+{% endblock %}

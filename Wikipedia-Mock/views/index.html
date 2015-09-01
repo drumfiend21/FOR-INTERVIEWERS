@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block content %}
+	<h1>{{title}}</h1>
+    <p>PAGES</p>
+	{% if docs.length > 0 %}
+	  <ul>
+	    {% for doc in docs %}
+	      <!-- <li>{{doc|page_link}}</li> -->
+	      <li><a href="/wiki/{{doc.sec_url}}">{{doc.title}}</a></li>
+	    {% endfor %}
+	  </ul>
+	{% else %}
+	  There are no pages. Why don't you <a href='/add'>add one</a>?
+	{% endif %}
+{% endblock %}
