@@ -1,0 +1,47 @@
+#account-page{
+
+	background-color: #E3E3E3;
+	
+	#your-account{
+		background-color: white;
+		position: relative;
+		display: block;
+		padding: 20px;
+		margin: 0 auto;
+	  	// margin-top: -20px;
+		width: 450px;
+		border-style: hidden;
+		border-radius: 15px;
+		border-width: 3px;
+
+		input{
+		  border-radius: 3px;
+		  border-width: 1px;
+		}
+
+		h4{
+			text-align: center;
+		}
+
+		#change-pass{
+			position: relative;
+			display: block;
+			margin: 0 auto;
+			margin-top: 10px;
+		}
+		button{
+			margin-left: 10px;
+			border-radius: 3px;
+			background-color: green;
+			color: white;
+	   	  background-image: linear-gradient(rgb(98, 196, 98), rgb(81, 163, 81));
+			  height: 30px;
+			  padding: 4px;
+	
+
+		}
+
+	}
+
+	
+}

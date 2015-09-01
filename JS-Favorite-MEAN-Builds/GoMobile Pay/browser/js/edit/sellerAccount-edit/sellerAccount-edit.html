@@ -1,0 +1,28 @@
+<navbar></navbar>
+<div id="editPage">
+    <div id="editAccount">
+        <form name="registrationForm" ng-submit="registrationForm.$valid && submitEditCard()">
+
+            <h1 id="failPass" ng-show="failPass">Invalid password.  Please enter a valid password.</h1>
+
+            <h4><strong>Current Destination Account:</strong></h4>
+            <p style="font-size: 16px">{{currentProperty}}</p>
+            <br>
+            <div class="form-group">
+                <label>Your New Destination Account</label>
+                <input ng-model="user.sellerAccount" class="form-control"  required type="text" name="sellerAccount">
+                <p ng-show="registrationForm.sellerAccount.$error.required && registrationForm.$submitted" class="help-block">A valid TchoTcho account number is required.</p>
+                <p ng-show="registrationForm.sellerAccount.$error.minlength && registrationForm.$submitted" class="help-block">must be 11 digits in length</p>
+                <p ng-show="registrationForm.sellerAccount.$error.maxlength && registrationForm.$submitted" class="help-block">must be 11 digits in length</p>
+                <br>
+            </div>
+            <div class="form-group">
+                <label>Please Re-enter Your Password</label>
+                <input type="password" style="width: 200px; height: 30px" ng-model="user.password" class="form-control" placeholder="Password">
+                <p ng-show="registrationForm.password.$error.minlength && registrationForm.$submitted" class="help-block">password must be at least 8 characters.</p>
+                <p ng-show="registrationForm.password.$error.required && registrationForm.$submitted" class="help-block">password is required.</p>
+            </div>
+            <button style="margin-left: 0px;" type="submit" >Submit</button><button style="background-image: linear-gradient(rgb(255, 0, 0), rgb(211, 12, 12));" ng-click="cancelEdit()" >Cancel</button>
+        </form>
+    </div>
+</div>

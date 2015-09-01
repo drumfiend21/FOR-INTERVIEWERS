@@ -1,0 +1,78 @@
+  <!--======================================= FOR INDEX.HTML======================================= -->
+  <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+  <link rel="stylesheet" type ="text/css" href="http://192.168.1.155:1337/iframe.css"/>
+
+
+  <!--=======================================FOR CHECKOUT HTML PAGE=======================================-->
+
+  <!-- BUTTON CONTAINER HTML -->
+  <div id="button-container" style="width: 50px; height: 50px; margin: 0 auto;">
+      <button id="checkout-button">Checkout</button>
+    <!-- BUTTON CONTAINER SCRIPT -->
+      <script id="tchopay-script" src="http://192.168.1.155:1337/tchopay.js" class="" data-key="pk_43c3de5c36c7cab5a8d7690c7aafb146a3336698" data-amount="146" data-transactionHashValue="" data-timestamp="it's late-o-clock" data-transactionOutcomeObject="" data-checkoutComplete="" data-transactionFinalized="" data-transactionError="" data-notrack="">
+      </script>
+  </div>
+
+
+  <!-- IFRAME LOADER SCRIPT -->
+  <script>
+    
+    //This call runs on page load, initializing for MobileGo Pay
+    var MobileGoPayInit = function () {
+      return $.ajax({
+        method: "GET",
+        url: "/api/orders/init" // your init route url here
+      })
+      .done(function (response) {
+        
+        //select stuff on dom.... we will first put button on dom
+        
+        var initObj = response.data
+        
+        $("#tchopay-script").attr("data-transactionHashValue", initObj.transactionHash)
+        $("#tchopay-script").attr("data-timestamp", initObj.timestamp)
+
+        console.log("init http response", response)
+
+        return response.data;
+
+      });  
+    }
+    MobileGoPayInit()
+
+    var checkoutComplete = function(transactionOutcomeObject){
+      
+      //FOR WEB APP DEVELOPER:
+      //Make http/ajax call here 
+      //to your web app server to "confirmation route"
+      //Send an object that contains
+      //    -transactionOutcomeObject
+
+      $.ajax({
+        method: "POST",
+        url: "orders/confirm", // your confirm route url here
+        data: transactionOutcomeObject
+      })
+      .done(function( success ) {
+        //if successful confirmation response, set variable for GoMobile Pay to resolve iframe state
+        //to "transaction completed" for buyer
+        if(success===1){
+          transactionFinalized = true;
+        }
+        if(success===2){
+        //if due to a communication error with GoMobile Pay, their server did not approve your
+        //call, signify a transactionError, which GoMobile Pay will use to resolve the iframe 
+        //to an error state.
+          transactionError = true;
+        }
+        if(success===3){
+        //this is your server response to an incumbent outcome object that did not authenticate as coming from GoMobile Pay
+            //choose your recourse to implement here
+            //eg. redirect to an error page/view
+
+        }
+      });
+    }
+
+  </script>

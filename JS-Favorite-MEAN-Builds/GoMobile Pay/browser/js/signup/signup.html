@@ -1,0 +1,73 @@
+<navbar></navbar>
+
+<h1>SIGN UP</h1>
+    <!-- <div style="display:inline-block; min-height:290px;">
+      <datepicker ng-model="dt" min-date="minDate" show-weeks="true" class="well well-sm" custom-class="getDayClass(date, mode)"></datepicker>
+    </div> -->
+
+<form id="signUp-form" name="registrationForm" ng-submit="registrationForm.$valid && sendLogin(signup)" novalidate>
+    <!-- {{ registrationForm | json }} -->
+    <alert type="danger" ng-show="error">
+        {{ error }}
+    </alert>
+
+    <div class="form-group">
+        <label for="merchant-id">Business Name</label>
+        <input type="text" name="merchantId" ng-model="signup.merchantId" class="form-control" id="merchant-id" placeholder="Enter business name." required>
+        <p ng-show="registrationForm.merchantId.$invalid && registrationForm.$submitted" class="help-block">Business name is required.</p>
+    </div>
+
+    <div class="form-group" ng-class="{ 'has-error' : registrationForm.description.$invalid && registrationForm.$submitted }">
+        <label for="description">Business Description</label>
+        <input type="text" name="description" ng-model="signup.description" class="form-control" id="description" placeholder="Enter business description." required>
+        <p ng-show="registrationForm.description.$invalid && registrationForm.$submitted" class="help-block">Please enter a brief description of your business.</p>
+    </div>
+
+    <div class="form-group" ng-class="{ 'has-error' : registrationForm.email.$invalid && registrationForm.$submitted }">
+        <label for="email">Email address</label>
+        <input type="text" name="email" ng-model="signup.email" class="form-control" id="email" placeholder="Enter email." required>
+        <p ng-show="registrationForm.email.$invalid && registrationForm.$submitted" class="help-block">Please enter a valid email.</p>
+    </div>
+
+    <div class="form-group" ng-class="{ 'has-error' : registrationForm.phone.$invalid && registrationForm.$submitted }">
+       <label>Phone Number</label>
+       <input type="text" name="phone" class="form-control" ng-model="signup.phone" ng-minlength="6" ng-maxlength="16" placeholder="Please enter your local or international phone number." required>
+       <p ng-show="registrationForm.phone.$error.required && registrationForm.$submitted" class="help-block">phone number is required.</p>
+    </div>
+
+    <div class="form-group" ng-class="{ 'has-error' : registrationForm.password.$invalid && registrationForm.$submitted }">
+        <label for="login-password">Password</label>
+        <input type="password" name="password" ng-model="signup.password" class="form-control" id="login-password" placeholder="Enter password." required>
+        <p ng-show="registrationForm.password.$error.minlength && registrationForm.$submitted" class="help-block">password must be at least 8 characters.</p>
+        <p ng-show="registrationForm.password.$error.required && registrationForm.$submitted" class="help-block">password is required.</p>
+
+    </div>
+    <div class="form-group" ng-class="{ 'has-error' : registrationForm.callbackUrl.$invalid && registrationForm.$submitted }">
+        <label>Callback Url</label>
+        <input type="url" name="callbackUrl" ng-model="signup.callbackUrl" class="form-control" id="callback-url" placeholder="Enter callback url." required>
+        <p ng-show="registrationForm.callbackUrl.$error.required && registrationForm.$submitted">
+          A callback url is required!</p>
+        <p ng-show="registrationForm.callbackUrl.$error.url && registrationForm.$submitted">
+          Please enter a valid callback url!</p>
+    </div>
+
+    <div class="form-group" ng-class="{ 'has-error' : registrationForm.webAppDomain.$invalid && registrationForm.$submitted }">
+        <label>Web App Domain Name</label>
+        <input type="url" name="webAppDomain" ng-model="signup.webAppDomain" class="form-control" id="webAppDomain" placeholder="Enter web app domain." required>
+        <p ng-show="registrationForm.webAppDomain.$error.required && registrationForm.$submitted">
+          Your valid web app domain name is required!</p>
+        <p ng-show="registrationForm.webAppDomain.$error.url && registrationForm.$submitted">
+          Please enter your valid web app domain name!</p>
+    </div>
+
+    <div class="form-group" ng-class="{ 'has-error' : registrationForm.sellerAccount.$invalid && registrationForm.$submitted }">
+       <label>TchoTcho Account Number</label>
+       <input type="text" name="sellerAccount" class="form-control" ng-model="signup.sellerAccount" ng-minlength="11" ng-maxlength="11" placeholder="Enter a valid TchoTcho account number." required>
+       <p ng-show="registrationForm.sellerAccount.$error.required && registrationForm.$submitted" class="help-block">A valid TchoTcho account number is required.</p>
+       <p ng-show="registrationForm.sellerAccount.$error.minlength && registrationForm.$submitted" class="help-block">must be 11 digits in length</p>
+       <p ng-show="registrationForm.sellerAccount.$error.maxlength && registrationForm.$submitted" class="help-block">must be 11 digits in length</p>
+    </div>
+
+    <button type="submit" class="btn btn-default" >Submit</button>
+
+</form>

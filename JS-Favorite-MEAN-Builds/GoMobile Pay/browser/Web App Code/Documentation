@@ -1,0 +1,135 @@
+MOBILE BANKING WEB APP API 
+DOCUMENTATION
+
+
+-----------------------------------
+<<<<<<<FRONT END HTML>>>>>>>
+-----------------------------------
+<> Button Container <> 
+
+The button container is provided for your HTML.  It provides the checkout button, which a user will click to pay for their transaction on your site.
+
+It contains a script (see front end javascript, button container script).
+
+This is directly inserted unaltered into your page HTML.
+
+-----------------------------------
+<<<<<<<FRONT END JAVASCRIPT>>>>>>>
+-----------------------------------
+
+<> iFrame Loader Script <> 
+
+ This script is provided to be pasted into your page html. This script will execute on page load, and assigns three global variables to your page, along with a function that we will call upon reporting the outcome of a transaction to one of the global variables and prior to closing the iframe.  
+
+	<> Variables <>
+
+		transactionHashValue
+
+		//For your server to populate with a hashed string value on page loading.
+
+		transactionTimestamp 
+
+		//For your server to populate with a timestamp string value on page loading.
+
+		transactionOutcomeObject 
+
+		//For us to populate with a transaction outcome object upon transaction completion.
+
+		checkoutComplete 
+
+		//A function for us to call upon populating the transaction outcome object.
+
+		transactionFinalized 
+		//iframe notifier to resolve success state
+		
+		transactionError 
+		//iframe notifier to resolve error state
+
+<> Button Container Script <>
+
+Within the button container that is provided to be pasted, unaltered, into your page HTML, is this script which is sourced by the TchoPay server. This script launches the iframe when the user of your web app clicks the checkout button.  This script also has data-attributes that your web app must populate with information about your transaction for us to grab.  
+
+	<> Data Attributes <>
+
+		This script has data-attributes on it that you must bind and populate as you build a transaction on the page containing the provided Button Container.  This is crucial to transmitting to TchoPay all parameters of the transaction, including amount and your API Public Key.
+
+
+<> Checkout Complete Function <>
+
+(checkoutComplete)
+
+
+This function is provided in the "iframe loader script" which you will paste into your front end javascript.
+
+We will call this function through the iframe when the transaction has been processed and an outcome has been posted to the transactionOutcomeObject provided by us to your front end javascript.
+
+----------------------------
+<> Transaction Outcome Object <>
+
+(transactionOutcomeObject)
+
+This global variable object is provided in the script which you will paste into your front end javascript.
+
+The transaction outcome object has the following properties. 
+
+Do not alter this object. It is described here to facilitate your understanding of our service. 
+
+var transactionOutcomeObject = 
+{
+	transactionTimeStamp: [number -- UTC time stamp, e.g., 1436286777],
+	transactionHashValue: [string -- a 20-digit hash, e.g., 6pRNASCoBOKtIshFeQd4XMUh],
+	amount: [stringified number -- purchase amount in Haitian Gourdes, e.g., 107],
+	publicApiKey: [string -- a 20-digit hash prepended with "pk_", e.g., pk_7aIEJEN35di8FE7l3ISn],
+	outcomeKey: [string -- three-digit stringified number, initialized at 000]
+	outcomeHashedValue: [ string -- 20-digit hash]
+	confirmed: [Boolean]
+}
+
+
+Once we have finished processing the transaction we will fill this object with transaction outcome data, like the samples above.  Your front end registers this data when we then call the checkoutComplete function (see documentation) which your developer must fill in with a call to your back end, transmitting this transactionOutcomeObject.  
+
+The "confirmed" property will have a default value of "false", and will be changed to "true" by our server once the transaction has been authenticated. See "Confirmation Route" section of documentation for more detail.
+
+This call should go to a "confirmation route" in your server (see "confirmation route" in documentation).
+
+-----------------------------
+<<<<<<SERVER SIDE>>>>>>>>
+-----------------------------
+<> Page Serving Route <>
+
+As your server is executing the route to serve your page (referred hereafter as 'page serving route') which contains the TchoPay Checkout Button, these things must be done.
+
+A timestamp must be generated and stored on a variable in the route.
+
+A hash function must be written using your common language cryptography library.  The hash uses the "SHA-2" encryption algorithm, per the parameters below, and is updated with your API Secret and the generated timestamp.  
+
+
+	<> Timestamp <>
+
+	Upon execution of the "page serving route" generate a UNIX timestamp ie. milliseconds since January 1, 1970, and save it to a variable within and the route.
+
+
+	<> Hash Generator Function <>
+
+	Write a function in your native server language that uses a cryptography library to create a Hash.  The hash must use SHA-2 encryption algorithm.  The hash must be limited to 20 digits.  The hashing function intakes your API Secret and the timestamp generated upon page serving.  The hash is updated with this API Secret and the timestamp.  The function returns the 20 digit hashed value.
+
+This hash and timestamp is then populated into your HTML as it is being loaded, using whatever methodology is preferred by the developer (e.g. Swig) to the global variables: transactionTimeStamp and transactionHashValue provided in your front end script.
+
+----------------------------
+<> Confirmation Route <>
+
+Once the transaction has reported an outcome, which we have posted to your HTML (transactionOutcomeObject) and called the checkoutComplete function, your call to your own server should post the transactionOutcomeObject to what we will call for reference purposes, "confirmation route."
+
+Within this confirmation route in your server, you should then post this same object, unaltered from its initial receipt on your front end, to our server at address:
+
+"https://tchopay.com/confirm-transaction"
+
+<> Authenticating the Transaction <>
+
+We will respond with a final confirmation, changing the "confirmed" value on the Transaction Outcome Object from "false" to "true", at which point the transaction has been officially authenticated and you can safely extract outcome data to store to your database.
+
+Your ajax call will respond back to your front end 
+
+
+
+

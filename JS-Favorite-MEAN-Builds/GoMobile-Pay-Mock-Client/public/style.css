@@ -1,0 +1,360 @@
+* {
+  box-sizing: border-box; }
+
+@font-face {
+  font-family: "Flaticon";
+  src: url("flaticon.eot");
+  src: url("flaticon.eot#iefix") format("embedded-opentype"), url("flaticon.woff") format("woff"), url("flaticon.ttf") format("truetype"), url("flaticon.svg") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before, [class^="flaticon-"]:after, [class*=" flaticon-"]:after {
+  font-family: Flaticon;
+  font-size: 20px;
+  font-style: normal;
+  margin-left: 20px; }
+
+.flaticon-leaf32:before {
+  content: "\e000"; }
+
+.flaticon-rounded44:before {
+  content: "\e001"; }
+
+fullstack-logo {
+  display: block; }
+  fullstack-logo img {
+    display: block;
+    width: 100%; }
+
+navbar {
+  display: block;
+  background: #bfbfbf;
+  font-family: 'Indie Flower', cursive;
+  font-size: 20px;
+  font-weight: bold; }
+  navbar fullstack-logo {
+    padding-top: 7px;
+    margin-right: 20px;
+    width: 40px; }
+  navbar a {
+    color: #DFF0D8; }
+    navbar a:hover {
+      color: #77a53e; }
+  navbar .nav > li > a {
+    cursor: pointer; }
+    navbar .nav > li > a.active {
+      color: white; }
+    navbar .nav > li > a:hover {
+      transition: color 0.2s;
+      background: #898989; }
+    navbar .nav > li > a:focus {
+      color: white;
+      background: transparent; }
+  navbar .right-nav {
+    float: right;
+    margin-top: 12px;
+    padding-right: 10px; }
+    navbar .right-nav:hover {
+      transition: color 0.2s;
+      text-decoration: none; }
+    navbar .right-nav:focus {
+      color: white;
+      text-decoration: none; }
+  navbar .welcome {
+    display: inline-block;
+    float: right;
+    margin-top: 12px; }
+    navbar .welcome span {
+      color: white; }
+    navbar .welcome a {
+      color: #DFF0D8;
+      cursor: pointer;
+      margin-top: 12px; }
+      navbar .welcome a:hover {
+        transition: color 0.2s;
+        text-decoration: none; }
+      navbar .welcome a:focus {
+        color: white; }
+
+#home {
+  font-family: 'Indie Flower', cursive;
+  color: #606060; }
+  #home fullstack-logo {
+    padding-top: 30px;
+    width: 150px;
+    margin: 0 auto; }
+  #home h1 {
+    margin-top: 40px;
+    text-align: center; }
+
+#about {
+  width: 1340px;
+  margin: 0 auto;
+  padding: 50px 100px; }
+  #about p {
+    width: 400px;
+    margin: 0 auto;
+    text-align: justify;
+    font-size: 22px;
+    font-weight: 300;
+    float: left; }
+  #about .carousel {
+    float: right;
+    width: 600px;
+    overflow: hidden;
+    margin: 0 auto; }
+    #about .carousel .carousel-control {
+      background: none; }
+    #about .carousel .carousel-indicators {
+      display: none; }
+    #about .carousel img {
+      width: 100%;
+      height: 500px;
+      display: block;
+      margin: 0 auto; }
+
+tutorial-section {
+  display: block;
+  width: 90%;
+  margin: 10px auto;
+  padding: 20px 0 60px 0; }
+  tutorial-section > h1 {
+    margin: 20px 0 40px 0;
+    text-align: center;
+    font-weight: bold; }
+
+tutorial-video {
+  display: block;
+  width: 600px;
+  margin: 0 auto; }
+  tutorial-video h1 {
+    font-weight: 300;
+    font-size: 24px;
+    margin-bottom: 15px; }
+  tutorial-video iframe {
+    width: 600px;
+    height: 400px; }
+
+tutorial-section-menu {
+  display: block; }
+  tutorial-section-menu:after {
+    content: "";
+    display: table;
+    clear: both; }
+  tutorial-section-menu ul {
+    margin-left: 23px;
+    list-style-type: none;
+    font-weight: 300; }
+    tutorial-section-menu ul li {
+      float: left;
+      margin-right: 40px;
+      padding: 10px;
+      cursor: pointer; }
+      tutorial-section-menu ul li:hover {
+        background: #f3f3f3; }
+
+#login-page {
+  color: #606060; }
+  #login-page #login-form {
+    width: 60%;
+    margin: 0 auto; }
+  #login-page .input-fields {
+    font-family: 'Indie Flower', cursive;
+    font-size: 20px; }
+  #login-page #third-party-login {
+    width: 60%;
+    margin: 0 auto; }
+  #login-page .input-btn {
+    font-family: 'Indie Flower', cursive; }
+  #login-page h5 {
+    font-family: 'Indie Flower', cursive; }
+  #login-page #google {
+    font-family: 'Indie Flower', cursive; }
+  #login-page h2 {
+    font-family: 'Indie Flower', cursive;
+    text-align: center;
+    padding: 20px; }
+  #login-page #password {
+    width: 60%;
+    margin: 0 auto;
+    padding-bottom: 20px; }
+  #login-page .reset-form {
+    margin-top: 20px;
+    margin-bottom: 20px; }
+
+.signup-page {
+  width: 60%;
+  margin: 0 auto; }
+  .signup-page #signup-form {
+    font-family: 'Indie Flower', cursive;
+    color: #606060;
+    text-align: left; }
+    .signup-page #signup-form h2 {
+      text-align: center; }
+
+h2 {
+  font-size: 30px; }
+
+.cart {
+  font-family: 'Indie Flower', cursive;
+  font-size: 20px; }
+
+.reset-page {
+  color: #606060;
+  font-family: 'Indie Flower', cursive; }
+  .reset-page #reset-form {
+    width: 60%;
+    margin: 0 auto; }
+  .reset-page h2 {
+    text-align: center;
+    padding: 20px; }
+
+#micros {
+  font-family: 'Indie Flower', cursive;
+  color: #606060; }
+  #micros #top-panel {
+    text-align: center; }
+  #micros #bottom-panel {
+    margin-top: 25px; }
+  #micros .micro-info {
+    display: flex;
+    align-items: center; }
+  #micros .micro {
+    text-align: left; }
+  #micros .description {
+    text-align: left;
+    font-size: 20px; }
+  #micros .micros-button {
+    margin: 0 10px;
+    color: white;
+    font-family: 'Indie Flower', cursive; }
+  #micros img.micro-image {
+    width: 70%;
+    height: auto; }
+
+.create-micro {
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px; }
+
+#blends {
+  display: table;
+  margin-top: -20px;
+  height: 100%; }
+  #blends #left-panel {
+    display: table-cell;
+    width: 23%;
+    min-width: 140px;
+    background-color: #bfbfbf;
+    float: none; }
+    #blends #left-panel a {
+      width: 100%;
+      font-family: 'Indie Flower', cursive;
+      font-size: 20px; }
+    #blends #left-panel .container {
+      width: 100%; }
+    #blends #left-panel .blend-items {
+      background-color: #448944;
+      color: white; }
+  #blends #right-panel {
+    padding-top: 40px;
+    display: table-cell;
+    float: none;
+    vertical-align: top; }
+    #blends #right-panel .container {
+      width: 100%; }
+    #blends #right-panel button {
+      display: block;
+      font-size: 15px;
+      font-family: 'Indie Flower', cursive;
+      margin-bottom: 5px; }
+    #blends #right-panel h2 {
+      font-family: 'Indie Flower', cursive; }
+    #blends #right-panel .toggle-review {
+      width: 100%; }
+    #blends #right-panel .btn-span {
+      width: 100%; }
+    #blends #right-panel h3 {
+      font-size: 30px;
+      display: inline-block;
+      float: left; }
+    #blends #right-panel form {
+      display: inline-block;
+      float: right; }
+    #blends #right-panel .quantity-input {
+      display: inline-block;
+      font-family: arial;
+      font-size: 15px;
+      width: 50px;
+      margin-bottom: 5px; }
+    #blends #right-panel .blend-price {
+      padding-top: 60px; }
+    #blends #right-panel .btn-size {
+      display: inline-block; }
+
+.review {
+  width: 100%; }
+  .review form {
+    width: 100%;
+    float: left; }
+    .review form label {
+      float: left;
+      display: block; }
+    .review form textarea {
+      float: left;
+      width: 100%; }
+
+.micro-selections {
+  display: inline-block;
+  font-size: 20px;
+  font-family: 'Indie Flower', cursive; }
+  .micro-selections input {
+    margin-right: 40px; }
+
+.review {
+  float: left; }
+
+.leaf {
+  width: 32%;
+  height: 32%;
+  display: inline-block; }
+
+.bowl {
+  width: 50%;
+  height: 50%;
+  display: block;
+  margin-top: -65px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative; }
+
+.micro-thumbnails {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto; }
+
+.blend-dir {
+  font-family: 'Indie Flower', cursive;
+  color: #606060; }
+
+.blend-info {
+  vertical-align: middle; }
+
+.side {
+  margin-top: auto;
+  margin-bottom: auto; }
+
+#orders #orders-page {
+  font-family: 'Indie Flower', cursive;
+  color: #606060; }
+  #orders #orders-page a {
+    color: #77a53e; }
+
+#admin-user {
+  font-family: 'Indie Flower', cursive;
+  text-align: center;
+  color: #606060;
+  width: 40%;
+  margin: 0 auto;
+  margin-top: 50px; }

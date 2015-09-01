@@ -1,0 +1,23 @@
+<form name="categoryForm" ng-submit="categoryForm.$valid && saveItem(item)" ng-show="newItem || ( !newItem && item._id === activeEditId )">
+	<input type="hidden" name="id" ng-model="item._id" value="{{item._id}}">
+	<!-- <pre>{{ newTeamForm | json }}</pre> -->
+
+	<div class="form-group">
+		<label for="name">{{ cateName }} Name</label>
+		<input type="text" name="name" ng-model="item.name" class="form-control" placeholder="{{ cateName }} Name" value="{{ item.name }}" required>
+	</div>
+
+	<div class="form-group" ng-show="cateName !== 'Shape'">
+		<label for="price">{{ cateName }} Price</label>
+		<input type="number" name="price" ng-model="item.price" class="form-control" placeholder="{{ cateName }} Price" value="{{ item.price }}" ng-required="cateName !== 'Shape'">
+	</div>
+
+	<div class="form-group">
+		<label for="mascot">{{ cateName }} Description</label>
+		<textarea type="text" name="description" ng-model="item.description" class="form-control" placeholder="{{ cateName }} Description" required>{{ item.description }}</textarea>
+	</div>
+
+    <button type="submit" class="btn btn-default">Submit</button>
+    <a class="btn" ng-click="removeForm()">Cancel</a>
+    <!--<button class="btn btn-default" ng-click="removeForm()">Cancel</button>-->
+</form>

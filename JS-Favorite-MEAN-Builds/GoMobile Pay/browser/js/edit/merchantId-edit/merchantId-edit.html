@@ -1,0 +1,23 @@
+<navbar></navbar>
+<form name="registrationForm" ng-submit="registrationForm.$valid && submitEditCard()">
+                
+    <br>
+    <h1 id="failPass" ng-show="failPass">Invalid password.  Please enter a valid password.</h1>
+    <br>
+    <p><strong>Current Business Name:</strong></p>
+    <p>{{currentProperty}}</p>
+    <br>
+    <div class="form-group">
+        <label for="merchant-id">Business Name</label>
+        <input type="text" name="merchantId" ng-model="user.merchantId" class="form-control" required>
+        <p ng-show="registrationForm.merchantId.$invalid && registrationForm.$submitted" class="help-block">Business name is required.</p>
+    </div>
+    <div class="form-group">
+        <label>Please Re-enter Your Password</label>
+        <input type="password" ng-model="user.password" class="form-control" placeholder="Password">
+        <p ng-show="registrationForm.password.$error.minlength && registrationForm.$submitted" class="help-block">password must be at least 8 characters.</p>
+        <p ng-show="registrationForm.password.$error.required && registrationForm.$submitted" class="help-block">password is required.</p>
+    </div>
+    <button type="submit" >Submit</button>
+</form>
+<button ng-click="cancelEdit()" >Cancel</button>

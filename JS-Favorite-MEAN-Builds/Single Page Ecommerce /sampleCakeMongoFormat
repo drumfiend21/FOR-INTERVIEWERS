@@ -1,0 +1,34 @@
+
+
+
+                    scope.cake = {
+
+                        name: null,
+                        type: "custom",
+                        price: 0,
+                        shape: _20934782375,
+                        icing: _209347823r5,
+                        layers: [{ position: 1, filling: _20934782375}],
+                        reviews: null,
+                    }
+
+                    scope.cake = {
+						
+						name: "cake name",
+						type: "custom",
+						quantity: 5,
+						image: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=200%C3%97150&w=200&h=150,
+						price: 105,
+						shape: _20934782375,
+						icing: _20934782375,
+						layers: [ {1 ,_20934782375}, {2,_20934782375}, {3, _20934782375}],
+						reviews: [{
+							type: mongoose.Schema.Types.ObjectId,
+							ref: 'Review'
+						}]
+
+
+
+
+
+                    }

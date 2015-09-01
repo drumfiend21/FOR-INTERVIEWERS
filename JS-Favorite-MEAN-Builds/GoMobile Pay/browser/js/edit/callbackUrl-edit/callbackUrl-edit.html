@@ -1,0 +1,26 @@
+<navbar></navbar>
+<form name="registrationForm" ng-submit="registrationForm.$valid && submitEditCard()">
+                
+    <br>
+    <h1 id="failPass" ng-show="failPass">Invalid password.  Please enter a valid password.</h1>
+    <br>
+    <p><strong>Current Callback Url:</strong></p>
+    <p>{{currentProperty}}</p>
+    <br>
+    <div class="form-group" ng-class="{ 'has-error' : registrationForm.callbackUrl.$invalid && registrationForm.$submitted }">
+        <label>Callback Url</label>
+        <input type="url" name="callbackUrl" ng-model="user.callbackUrl" class="form-control" id="callback-url" placeholder="Enter callback url." required>
+        <p ng-show="registrationForm.callbackUrl.$error.required && registrationForm.$submitted">
+          A callback url is required!</p>
+        <p ng-show="registrationForm.callbackUrl.$error.url && registrationForm.$submitted">
+          Please enter a valid callback url!</p>
+    </div>
+    <div class="form-group">
+        <label>Please Re-enter Your Password</label>
+        <input type="password" ng-model="user.password" class="form-control" placeholder="Password">
+        <p ng-show="registrationForm.password.$error.minlength && registrationForm.$submitted" class="help-block">password must be at least 8 characters.</p>
+        <p ng-show="registrationForm.password.$error.required && registrationForm.$submitted" class="help-block">password is required.</p>
+    </div>
+    <button type="submit" >Submit</button>
+</form>
+<button ng-click="cancelEdit()" >Cancel</button>

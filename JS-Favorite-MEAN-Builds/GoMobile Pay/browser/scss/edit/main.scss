@@ -1,0 +1,45 @@
+#editPage{
+	
+	background-color: #E3E3E3;
+	height: 100%;
+	
+	#editAccount{
+		
+		background-color: white;
+		position: relative;
+		display: block;
+		padding: 20px;
+		margin: 0 auto;
+	  	margin-top: -20px;
+		width: 450px;
+		border-style: hidden;
+		border-radius: 15px;
+		border-width: 3px;
+
+		h4{
+			color: green;
+			text-align: left;
+		}
+
+
+		button{
+			margin-left: 10px;
+			border-radius: 3px;
+			background-color: green;
+			color: white;
+	   	  	background-image: linear-gradient(rgb(98, 196, 98), rgb(81, 163, 81));
+			  height: 30px;
+			  padding: 4px;
+			  display: inline-block;
+	
+
+		}
+
+		input{
+		  border-radius: 3px;
+		  border-width: 1px;
+		}
+		
+	}
+}		
+

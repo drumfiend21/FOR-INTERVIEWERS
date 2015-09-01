@@ -1,0 +1,28 @@
+<h1>STORE CREATE</h1>
+
+<form name="storeForm" ng-submit="storeForm.$valid && saveStore(store)">
+	<!-- <pre>{{ newTeamForm | json }}</pre> -->
+
+	<div class="form-group">
+		<label for="name">Name</label>
+		<input type="text" name="name" ng-model="store.name" class="form-control" placeholder="Store Name" required>
+	</div>
+
+	<div class="form-group">
+		<label for="description">Description</label>
+		<textarea type="text" name="description" ng-model="store.description" class="form-control" placeholder="Description" required></textarea>
+	</div>
+
+	<div class="form-group">
+		<label for="address">Address</label>
+		<input type="text" name="address" ng-model="store.address" class="form-control" placeholder="Address">
+	</div>
+
+	<div class="form-group">
+		<label for="phone">Phone</label>
+		<input type="text" name="phone" ng-model="store.phone" class="form-control" placeholder="Address">
+	</div>
+
+    <button type="submit" class="btn btn-default">Submit</button>
+    <button class="btn btn-default" ng-click="removeForm()">Cancel</button>
+</form>

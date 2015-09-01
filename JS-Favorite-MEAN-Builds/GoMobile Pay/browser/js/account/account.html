@@ -1,0 +1,67 @@
+<div id="account-page">
+	<navbar></navbar>
+	<div id="your-account">
+
+	<!-- 
+		<p>Business Name : {{user.merchantId}} <button ng-click="editAccount('merchantId')">Edit</button></p>
+		<p>Contact Email : {{user.email}} <button ng-click="editAccount('email')">Edit</button></p>
+		<p>Contact Phone : {{user.phone}} <button ng-click="editAccount('phone')">Edit</button></p>
+		<p>Business Description : {{user.description}} <button ng-click="editAccount('description')">Edit</button></p>
+		<p>Web App Domain : {{user.webAppDomain}} <button ng-click="editAccount('webAppDomain')">Edit</button></p>
+		<p>API Key : {{user.apiKey}} </p>
+		<p>API Secret : {{user.apiSecret}} </p>
+		<p>Seller Tcho Tcho Account : {{user.sellerAccount}} <button ng-click="editAccount('sellerAccount')">Edit</button></p>
+		<p><button style="color:red" ng-click="editAccount('password')">Change Password</button></p> -->
+
+		<img id='haiti-button' src='/images/logo.png' alt='' height='145' width='190'>
+		<style type="text/css">
+		.tg  {border-collapse:collapse;border-spacing:0;}
+		.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:hidden;border-width:3px;overflow:hidden;word-break:normal;}
+		.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:hidden;border-width:3px;overflow:hidden;word-break:normal;}
+		</style>
+		<h4 style="color: green">Your Account</h4>
+		<table class="tg">
+		  <tr>
+		    <th class="tg-031e"><p>Business Name:</p></th>
+		    <th class="tg-031e"><input readonly style="width: 291px" value="{{user.merchantId}}"></input><button id="edit" class="btn" ng-click="editAccount('merchantId')">Edit</button></p></th>
+		  </tr>
+		  <tr>
+		    <td class="tg-031e"><p>Contact Email:</p></td>
+		    <td class="tg-031e"><input readonly style="width: 291px" value="{{user.email}}"></input><button id="edit" class="btn" ng-click="editAccount('email')">Edit</button></p></td>
+		  </tr>
+		  <tr>
+		    <td class="tg-031e"><p>Contact Phone:</p></td>
+		    <td class="tg-031e"><input readonly style="width: 291px" value="{{user.phone}}"></input><button id="edit" class="btn" ng-click="editAccount('phone')">Edit</button></p></td>
+		  </tr>
+		  <tr>
+		    <td class="tg-031e"><p>Business Description:</p></td>
+		    <td class="tg-031e"><input readonly style="width: 291px" value="{{user.description}}"></input><button id="edit" class="btn" ng-click="editAccount('description')">Edit</button></p></td>
+		  </tr>
+		  <tr>
+		    <td class="tg-031e"><p>Web App Domain:</p></td>
+		    <td class="tg-031e"><input readonly style="width: 291px" value="{{user.webAppDomain}}"></input> <button id="edit" class="btn" ng-click="editAccount('webAppDomain')">Edit</button></p></td>
+		  </tr>
+		  <tr>
+		    <td class="tg-031e"><p>API Key:</p></td>
+		    <td class="tg-031e"><input readonly style="width: 340px" value="{{user.apiKey}}"></input></td>
+		  </tr>
+		  <tr>
+		    <td class="tg-031e"><p>API Secret:</p></td>
+		    <td class="tg-031e"><input readonly style="width: 340px" value=" {{user.apiSecret}}"></input></td>
+		  </tr>
+		  <tr>
+		    <td class="tg-031e"><p>Your Destination Account:</p></td>
+		    <td class="tg-031e"><input readonly style="width: 291px" value="{{user.sellerAccount}}"></input> <button id="edit" class="btn" ng-click="editAccount('sellerAccount')">Edit</button></p></td>
+		  </tr>
+		</table>
+		<p><button id="change" class="btn" id="change-pass" style="color:white; background-image: linear-gradient(rgb(255, 0, 0), rgb(211, 12, 12)); display: block; margin: 0 auto;" ng-click="editAccount('password')">Change Password</button></p>
+
+
+
+
+
+	</div>
+</div>
+
+
+

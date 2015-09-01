@@ -1,0 +1,134 @@
+.iframe-fadeout{
+
+    
+    opacity: 0; 
+    -webkit-animation: iframefadeout .1s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: iframefadeout .1s; /* Firefox < 16 */
+    -ms-animation: iframefadeout .1s; /* Internet Explorer */
+     -o-animation: iframefadeout .1s; /* Opera < 12.1 */
+        animation: iframefadeout .1s;
+}
+
+#haiti-button{
+
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+
+}
+
+#check{
+    display: block;
+    position: relative;
+    margin: 0 auto;
+
+}
+h4{
+    text-align: center;
+    font-family: 'Oxygen', sans-serif;
+}
+
+
+#enter-info-color-top{
+
+    
+    background-color: #E3E3E3;
+    height: 150px;
+    width: 100%;
+}
+
+#authorizing{
+
+    margin-top: 90px;
+
+    #authorizing-spinner{
+        display: block;
+        position: relative;
+        margin: 0 auto;
+    }
+    h5{
+        text-align: center;
+        font-family: 'Oxygen', sans-serif;
+        margin-bottom: 10px;
+    }
+    
+}
+
+
+#enter-info-color-bottom{
+    
+    border-top-style: solid;
+    border-top-width: thin;
+    border-top-color: white;
+
+
+    button {
+        // background: #220b99;
+        background: green;
+        width: 150px;
+        position: relative;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: -100px;
+        color: white;
+        
+    }
+    
+    p{
+        text-align: center;
+        font-family: 'Oxygen', sans-serif;
+
+    }
+
+    .btn:focus {
+      background-color: red;
+    }
+
+    background-color: #F0F0F0;
+    padding: 30px;
+    height: 346px;
+}
+
+
+// button:hover{
+//     color: #DE0030;
+// }
+
+p{
+    font-size: 10px;
+    font-family: 'Oxygen', sans-serif;
+}
+
+h1, h2, h3, label{
+    font-family: 'Oxygen', sans-serif;
+}
+
+@keyframes iframefadeout {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes iframefadeout {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes iframefadeout {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes iframefadeout {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+
+
+/* Opera < 12.1 */
+@-o-keyframes iframefadeout {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
