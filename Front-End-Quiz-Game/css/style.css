@@ -1,0 +1,235 @@
+body {
+  margin: 0 auto;
+}
+
+#ocean {
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: -3;
+}
+
+#instructions{
+ position: absolute;
+ z-index: 4;
+ left: 28%;
+ top: 20%;
+ color: rgb(250,210,80);
+ text-shadow: 0 0 6px black;
+}
+
+.screen{
+ left: 24%;
+ top: 40%;
+}
+
+#title{
+ position: absolute;
+ z-index: 3;
+}
+
+#finish{
+ position: absolute;
+ z-index: 2;
+}
+
+#star{
+  width: 300px;
+  margin-left: -350px;
+}
+
+#final-score{
+  position: absolute;
+  z-index: 3;
+  top: 38%;
+  right: 29%;
+  font-size: 40px;
+  color: brown;
+}
+
+#chest{
+  margin-left: 150px;
+}
+
+#start{
+  display: block;
+  width: 200px; 
+  margin: 0 auto;
+  margin-top: 20px;
+  border-radius: 10px;
+	color: yellow;
+	background-image: linear-gradient(rgb(98, 196, 98), rgb(81, 163, 81));
+  font-size: 20px;
+}
+
+#ship{
+ position: absolute;
+ z-index: 3;
+ left: 100%;
+ top: 20%;
+}
+
+.half{
+  position: absolute;
+  z-index: 2;
+  width: 50%;
+  height: 100%;
+}
+
+#first-half{
+  left: -50%;
+}
+
+#second-half{
+  left: 100%;
+}
+
+.land{
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+}
+
+#united-states{
+ left: 0; 
+ top: -10%;
+}
+#angola{
+ left: 40%; 
+}
+#argentina{
+ left: 0; 
+}
+#sierra-leone{
+ right: -45%;
+ top: -40%;
+}
+#dominican-republic{
+ right: 35%; 
+}
+
+#welcome{
+ position: absolute;
+ z-index: 1;
+}
+
+#card{
+ display: block;
+ padding: 5%;
+ position: absolute;
+ z-index: 4;
+ left: 30%;
+ top: 40%;
+ width: 40%;
+ height: 150px;
+ font-size: 12px;
+}
+
+#paper{
+ display: block;
+ position: absolute;
+ z-index: -2;
+ left: 0;
+ top: -40%;
+ width: 100%;
+}
+
+#badge{
+ display: block;
+ position: absolute;
+ z-index: -1;
+ top: -25.5%;
+ left: 55.6%;
+ height: 15px;
+ width: 15px;
+}
+
+#country-welcome{
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: -15px;
+  font-size: 22px;
+}
+
+h2{
+  color: maroon;
+  text-align: center;
+  font-size: 14px;
+}
+
+.counter{
+  position: absolute;
+  margin-top: -105px;
+  text-align: center;
+  font-size: 10px;
+}
+
+#correct{
+  margin-left: 31.5%;
+}
+
+#num-correct{
+  color: green;
+  font-weight: bold;
+  margin-left: 44%;
+}
+
+#game-progress{
+  position: absolute;
+  margin-top: -77px;
+  margin-left: 31%;
+  color: brown;
+  text-align: center;
+  font-size: 10px;  
+}
+
+.progress{
+  margin: auto;
+  margin-top: -80px;
+  margin-bottom: 15px;
+  width: 60%;
+}
+
+input{
+  display: inline-block;
+}
+
+p{
+  display: inline;
+}
+
+.answers{
+  color: black;
+  padding-left: 37%;
+  font-size: 12px;
+}
+
+#question{
+  color: black;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+#submit{
+  height:30px; 
+  width:100px; 
+  top:50%; 
+  left:50%;
+  position:relative; 
+  margin: -50px; 
+  margin-top: -5px;
+  padding: 1%;
+  background-image: linear-gradient(rgb(201, 162, 129), rgb(133, 76, 30));
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+.flipped {
+    transform: scale(-1, 1);
+    -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    -khtml-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+}
