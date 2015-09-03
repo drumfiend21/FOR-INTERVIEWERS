@@ -1,0 +1,2094 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Siddharth Joshi | Guessing Game</title>
+    <link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="jqueryuI/jquery-ui.min.css">
+    <script type="text/javascript" src="jquery-1.11.2.js"></script>
+    <script src="jqueryui/external/jquery/jquery.js"></script>
+    <script src="jqueryui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="jQueryRotate.js"></script>
+   
+    <script>
+        jQuery(document).ready(function(){
+            
+            
+            $("#comet").hide();
+            $("#dino").hide();
+            $("#speechbubble").hide();
+            $("#click").hide();
+            $("#explode").hide();
+            $("#soundbutton").hide();
+            $("#satellite").hide();
+            $("#rotatesky").hide();
+            $(".popballoon").hide();
+            $("#gameoverdiv").hide();
+            $("#gameover").hide();
+            $("#youwin").hide();
+            $("#hand").hide();
+            $("#hintTwo").hide();
+            $("#hintOne").hide();
+            $("#hintThree").hide();
+            $("#aliensays").hide();
+            $("#instructions").fadeOut();
+            $("#sagan").fadeOut();
+            $("#introText").fadeOut();
+
+
+
+
+            
+            $("body").addClass("grey-bg");
+            $("body").find("#content").hide();
+            $("#hints").hide();
+            $("#carnival").hide();
+//try new paste below in next script
+/*
+               // $("body").on("keypress", function(){
+                $("#startDiv").on("click", function(){
+
+                    
+                    $("header").find("h1").slideUp();
+                
+
+                    //$("header").on("mouseenter", function(){
+
+                        $(this).find("img").switchClass("fs-zoom","fs-image");
+
+
+                        $(".black-open, #blacktext, #content").fadeIn();
+                        //$("#content").show();              
+                        
+                        
+                            /*function confirmDelay(){
+                                var r = confirm("This is simple.  How about we newskoolify this?");
+                                if (r == true) {
+                                    showpanel();
+                                } else {
+                                    alert("The door to the future is open, just a page reload away.");
+                                }
+                          
+                            };
+                        
+
+                        setTimeout(confirmDelay, 2000);*/
+
+                        /*function showpanel(){
+
+                            $("#carnival").fadeIn(1200);
+                            $("#hints").fadeIn(1200);
+                            $("#inputbox").removeClass("oldInput").addClass("newInput");
+                            $("body").addClass("cosmic-bg");
+                            //$("header").find("img").attr('src', 'images/fslogo-w.png');
+                           // $("body").find("h1, h2").addClass("white-text").fadeIn(2000);
+                            //hide() h1 h2 (give IDs) and fadeIn same text new ID new class (white)
+                            //$("#content").children("#blacktext").hide().parent().children("#whitetext").fadeIn(1200);
+                            $("#blacktext").hide();
+                            $("#whitetext").fadeIn(1200);
+                            $("header").children("#logoblack").hide().parent().children("#logowhite").fadeIn(1200);
+                            //$("body").removeClass("grey-bg");
+                            $("body").children("#cosmicbg").fadeIn(1200);
+                            $("#more-buttons").find("button").addClass("button");
+                            $("#submit-box").find("button").addClass("button");
+                            $("#submit-box").find("#submit").text("Submit");
+                            $("#more-buttons").find("#play-again").text("Play");
+                            $("#blacktext").remove();
+
+
+
+
+                        };*/
+
+
+                        
+
+          
+
+                    //}); 
+ /*               });   */
+            
+        });
+
+    </script>
+    <script>
+                jQuery(document).ready(function(){
+                    
+                    //$("#logoblack").on("mouseenter", function(){
+                    //$("body").on("keypress", function(){
+                    $("#startDiv").on("click", function(){
+                        
+//try new paste from above
+                       
+
+                        $("header").find("h1").slideUp();
+                
+
+                    //$("header").on("mouseenter", function(){
+
+//                        $("body").find("img").switchClass("fs-zoom","fs-image", 1000, "swing");
+                        $("#logoblack").switchClass("fs-zoom","fs-image", 500, "swing");
+
+
+                        $(".black-open, #blacktext, #content").fadeIn();
+
+                        $("#startDiv").css({display: "none"});
+//end new
+
+                        function confirmDelay(){
+
+                            /*
+
+                            var r = confirm("This is simple.  How about we newskoolify this?");
+                            if (r == true) {
+                                showpanel();
+                            } else {
+                                alert("The door to the future is open, just a page reload away.");
+                            };
+                            
+                            */
+                        
+                            function comet(){
+                                $("#comet").show();
+                                $("#comet").animate({left: "-=30%", top: "+=5%", width: "+=30%"}, 1000, "linear");
+
+                                function comLeft() {
+                                    $("#comet").animate({left: "-=5"}, 20, "swing", comRight);
+                                }
+                                function comRight() {
+                                    $("#comet").animate({left: "+=5"}, 20, "swing", comLeft);
+                                }
+                                function comUp(){
+                                    $("#comet").animate({top: "+=5"}, 20, "swing", comDown);
+                                }
+                                function comDown(){
+                                    $("#comet").animate({top: "-=5"}, 20, "swing", comUp);
+                                }
+                                comRight();
+                                comUp();
+
+
+
+                            };
+                            
+                            function dinosaur(){
+                                
+                                $("#dino").show();
+                                
+                                $("#dino").animate({left: "+=50%", top: "+=15%"}, 6000, "linear");
+
+                                function freeze(){
+                                    $("#dino").attr("src", "images/dinostill.gif");
+                                }
+                                setTimeout(freeze, 6000);
+                          
+                            };
+
+                            setTimeout(comet, 5000);
+                            dinosaur();
+
+                            function bubbleClick(){
+                                $("#speechbubble").show();
+
+                                $("#speechbubble").animate({width: "+=20%"}, 500, "swing");
+
+                                function clicker(){
+                                    $("#click").show();
+                                    $("#click").animate({width: "+=20%"}, 500, "swing")
+
+                                    function clickUp(){
+                                        $("#click").animate({top: "+=5%"}, 600, "swing", clickDown);
+                                    }
+                                    function clickDown(){
+                                        $("#click").animate({top: "-=5%"}, 600, "swing", clickUp);
+                                    }
+
+                                    clickUp();
+                                };
+                                setTimeout(clicker, 2500);
+                            };
+
+                            setTimeout(bubbleClick, 5500);
+
+                        };
+
+
+                        setTimeout(confirmDelay, 2000);
+
+
+
+
+                       
+                     
+                        $("#comet").on("click", function explode(){
+
+                                //show explosion
+                                //hide prehistoria
+                                //fadeout explosion
+                                $("#comet").animate({left: "-=25%", top: "+=20%"}, 50, "linear");
+
+                                function explodeSound(){
+
+                                    play_single_sound();
+                                };
+
+                                function explodeTimer(){
+                                    $("#explode").show();
+                                    $("#explode").animate({width: "+=300%"}, 50, "linear");
+                                    setTimeout(explodeSound, 80);
+                                    $("#explode").delay(7000).fadeOut();
+                                    function byePrehistoria(){
+                                        $("#prehistoria").hide();
+                                        showpanel();
+                                    }
+                                    setTimeout(byePrehistoria, 5000);
+
+                                };
+                                setTimeout(explodeTimer, 50);
+
+                                //play again button
+
+                                $("#play-again").on("click", function(){
+                                    
+                                    function cleanSlate(){
+                                        $("#gameoverdiv").hide();
+                                        $("#gameover").hide();
+                                        $("#youwin").hide();
+                                        $("#aliensays").hide();
+                                        $(".popballoon").show();
+                                        $(".ball").show();
+                                        $(".ballimg").show();
+                                        $("#prize").stop().css({width: "38px", height: "38px"});
+                                        $("#prizeId").css({top: "0px", right: "0px", left: "0px"});
+                                        $("#youwin").stop().css({top: "35px", right: "200px", left:"0", width:"20px"});
+                                        $("#aliensays").stop().css({top: "-210px", right: "0px", left:"300px", width:"8px"});
+                                        $("#hintOne").hide();
+                                        $("#hintTwo").hide();
+                                        $("#hintTwo").switchClass("hintOne","hintTwo");
+                                        $("#hintThree").hide();
+                                        $("#inputbox").val("");
+                                        shotCount = 0;
+                                        won = false; 
+                                        $("#hints").children("p").text("Can you guess the number 1-100?")
+                                        
+                                        
+                                        clearInterval(interval);
+
+                                    }
+                                    setTimeout(cleanSlate, 200);
+                                    $("#hand").show();
+                                    $("#hand").animate({right: "-=100%"}, 500, "linear");
+                                     var handReset = function(){
+                                        $("#hand").hide();
+                                        $("#hand").css({right: "0px", left: "-100px", top: "71px"});
+                                    };
+                                    setTimeout(handReset, 520);
+                                   
+                                    setTimeout(prizeGen, 530);
+                                    
+
+                                });
+
+                                $("#hint").on("click", function(){
+
+                                    divThreeTop = $("#prizeId").css("top").replace("px","") -282 + "px";
+
+                                    if($("#prizeId").css("left") === "0px"){
+                                        divThreeHor = Number($("#prizeId").css("right").replace("px","")) + 16 + "px";
+                                        $("#hintThree").css({ "top": divThreeTop,"right": divThreeHor, "left": "0px"});
+                                    }
+                                    if($("#prizeId").css("right") === "0px"){
+                                        divThreeHor = Number($("#prizeId").css("left").replace("px","")) - 16 + "px";
+                                        $("#hintThree").css({ "top": divThreeTop,"left": divThreeHor, "right": "0px"});
+                                    }
+                                    $("#hintThree").fadeIn();
+
+
+
+
+
+                                });
+                                function showpanel(){
+                                    $("#carnival").fadeIn(1200);
+                                    $("#hints").fadeIn(1200);
+                                    $(".popballoon").show();
+                                    $("#inputbox").removeClass("oldInput").addClass("newInput");
+                                    $("body").addClass("cosmic-bg");
+                                    //$("header").find("img").attr('src', 'images/fslogo-w.png');
+                                   // $("body").find("h1, h2").addClass("white-text").fadeIn(2000);
+                                    //hide() h1 h2 (give IDs) and fadeIn same text new ID new class (white)
+                                    //$("#content").children("#blacktext").hide().parent().children("#whitetext").fadeIn(1200);
+                                    $("#blacktext").hide();
+                                    $("#whitetext").fadeIn(1200);
+                                    $("header").children("#logoblack").hide().parent().children("#logowhite").fadeIn(1200);
+                                    //$("body").removeClass("grey-bg");
+                                    $("body").children("#cosmicbg").fadeIn(1200);
+                                    $("#more-buttons").find("button").addClass("button");
+                                    $("#submit-box").find("button").addClass("button");
+                                    $("#submit-box").find("#submit").text("Submit");
+                                    $("#more-buttons").find("#play-again").text("Play");
+                                    $("#blacktext").remove();
+                                    $("#blackguess").remove();
+                                    function music(){
+                                        play_song();
+                                        $("#soundbutton").show();
+                                    };
+                                    setTimeout(music, 100);
+
+                                    $("#soundbutton").on("click", function stop_song(){
+                                        document.getElementById('audiotag2').pause();
+                                        document.getElementById('audiotag2').currentTime = 0;
+                                        $("#soundbutton").addClass("backon");
+        
+                                    });
+
+                                    $("#rotatesky").show();
+                                    $("#satellite").show();
+                                    
+                                    //instructions screen
+                                    
+                                    $("#instructions").fadeIn(1200);
+                                    $("#sagan").fadeIn(1200);
+                                    $("#introText").fadeIn(1200);
+
+                                    var angle = 0;
+                                        interval = setInterval(function(){
+                                        angle+=.25;
+                                        $("#sagan").rotate(angle);
+                                    },50);
+                                    function instructions(){
+                                        $("#instructions").fadeOut();
+                                        $("#sagan").finish();
+
+                                    }
+                                    setTimeout(instructions, 20000)
+                                    //
+
+                                    $("#comet").stop(true, false);
+                                    $("#click").stop(true, false);
+
+                                    
+
+                                    function satellite(){
+                
+                                        $("#satellite").animate({right: "+=110%"}, 40000, "linear");
+                                        function finish(){
+                                            $("#satellite").finish();
+                                            $("#satellite").css({"right" : "-10%"});
+                                            satellite();
+                                        }
+                                        setTimeout(finish, 40010);
+                                        //setTimeout(reset, 40010);  
+                                    };                                    
+ /*                                   
+                                    reset = function(){
+                                        
+                                        satellite();
+                                    }
+*/
+                                    satellite();
+                                    //
+                                };
+                        });
+                    });
+                    
+
+  /*                                  
+                                        var win = function() {
+                                                
+                                                    // Win Results 
+
+                                                    won = true;
+
+                                                    // Prize Animations
+                                                    
+                                                    //spin
+                                                    var angle = 0;
+                                                    setInterval(function(){
+                                                        angle+=.25;
+                                                        $("#prize").rotate(angle);
+                                                    },50);
+
+                                                    //grow shrink
+                                                    
+                                                    function growSun(){
+                                                        $("#prize").animate({width: "+=15%", height: "+=15%"}, 1200, "swing", shrinkSun);
+                                                    };
+                                                    function shrinkSun(){
+                                                        $("#prize").animate({width: "-=15%", height: "-=15%"}, 1200, "swing", growSun);
+                                                    };
+
+                                                    growSun();                                           
+
+                                                    $("#youwin").show();
+                                                    $("#youwin").animate({width: "+=75%"}, 500, "linear");
+                                                    $("#gameoverdiv").show();
+
+                                        }
+*/
+                                    //Shot counter
+                                        shotCount = 0;
+                                        won = false;
+
+
+                                    //prize set
+
+                                    var prizeGen = function(){
+                                        //create arrays Left, Right, Top
+                                        // generate number 0 - 10 ,store as variable
+                                        // if variable < 5
+                                        //  assign top and left array
+                                        // if variable > 5
+                                        //  assign top and right array
+
+                                       
+
+                                        var right = [38,138,238,338,438];
+                                        var left = [62,162,262,363,462];
+                                        var top = [272, 322, 372, 422, 476, 532, 585, 635, 685, 735];
+
+                                        lOr = 0;
+                                        var leftOrRight= function(){
+                                            lOr = Math.floor(Math.random()*10);
+                                        }
+                                        leftOrRight();
+                                        
+                                            topVal = 0;
+                                        var topChoice= function(){
+                                            topVal = top[Math.floor(Math.random()*10)]+ "px";
+                                        }
+                                        topChoice();
+                                        
+                                        
+                                        horizVal = 0;
+                                        var horizontal= function(){
+                                            horizVal = Math.floor(Math.random()*5) 
+                                        }
+                                        horizontal();
+
+
+
+                                        if (lOr > 4) {
+                                            voo = left[horizVal]+"px";
+                                            //console.log(lOr, topVal, voo);
+                                            $("#prizeId").css({top: topVal, left: voo});
+
+                                        } else{
+                                            vee = right[horizVal]+"px";
+                                            //console.log(lOr, topVal, vee);
+                                            $("#prizeId").css({top: topVal, right: vee});
+
+                                        }
+
+                                        
+
+                                        
+                                       
+
+
+
+
+
+
+                                    }
+                                    prizeGen();
+
+
+
+                                    //Static Hint Functionality
+
+
+/*
+                                    var hintGen = function(){
+
+                                        /*
+                                        Div1 (.hintOne)
+
+                                        Div1 Height
+                                        250px
+
+                                        Div1 Width
+                                        250px
+
+                                        Div2 (.hintTwo)
+
+                                        Div2 Height
+                                        150px
+
+                                        Div2 Width
+                                        150px
+
+                                        Colors
+
+                                        Hot! Look inside!
+                                        255, 0, 0, 0.6
+
+                                        Not! Look outside!
+                                        0, 0, 255, 0.6
+
+                                        */
+
+
+                                        //Div1 Coordinates
+/*
+                                        divOneTop = $(this).css("top").replace("px","") - 100 + "px";
+                                       
+                                        if($(this).css("left") === "0px"){
+                                            divOneHor = $(this).css("right");
+                                            $("#hintOne").css({ "top": divOneTop,"right": divOneHor, "left": "0px"});
+                                        }
+                                        if($(this).css("right") === "0px"){
+                                            divOneHor = $(this).css("left");
+                                            $("#hintOne").css({ "top": divOneTop,"left": divOneHor, "right": "0px"});
+                                        }
+
+ */
+ /*                                        
+                                        //Div2 Coordinates
+
+                                        divTwoTop = $(this).css("top").replace("px","") - 50 + "px";
+
+                                        if($(this).css("left") === "0px"){
+                                            divTwoHor = $(this).css("right");
+                                            $("#hintTwo").css({ "top": divTwoTop, "right": divTwoHor });
+                                        }
+                                        if($(this).css("right") === "0px"){
+                                            divHor = $(this).css("left");
+                                            $("#hintTwo").css({ "top": divTwoTop, "left": divTwoHor });
+                                        }
+
+
+*/
+                                        //Color Decision
+
+                                        //Div 1
+/*
+                                        if(
+
+                                            (
+                                                Math.abs(
+                                                    $("#prizeId").css("top").replace("px","")
+                                                     - $(this).css("top").replace("px","")
+                                                ) === 100
+                                            )
+
+                                            && 
+
+                                            (
+                                                Math.abs(
+                                                    $("#prizeId").css("right").replace("px","")
+                                                     - $(this).css("right").replace("px","")
+                                                ) === 200
+                                            )
+
+
+
+                                            && 
+
+                                                $("#prizeId").css("left") === "0px"
+
+                                            &&
+
+                                                $("this").css("left") === "0px"
+
+                                            || 
+
+                                                (
+                                                    Math.abs(
+                                                        $("#prizeId").css("top").replace("px","")
+                                                         - $(this).css("top").replace("px","")
+                                                    ) === 100
+                                                )
+
+                                            && 
+
+                                                (
+                                                    Math.abs(
+                                                        $("#prizeId").css("left").replace("px","")
+                                                         - $(this).css("left").replace("px","")
+                                                    ) === 200
+                                                )
+
+
+
+                                            && 
+
+                                                $("#prizeId").css("right") === "0px"
+                                            &&
+
+                                                $("this").css("right") === "0px"
+                                            ||
+
+                                            (
+                                                Math.abs(
+                                                    $("#prizeId").css("top").replace("px","")
+                                                     - $(this).css("top").replace("px","")
+                                                ) === 100
+                                            )
+
+                                            && 
+
+                                            (
+                                                Math.abs(
+                                                    $("#prizeId").css("left").replace("px","")
+                                                     + $(this).css("right").replace("px","")
+                                                ) === 200
+                                            )
+
+
+
+                                            && 
+
+                                                $("#prizeId").css("right") === "0px"
+                                            &&
+
+                                                $("this").css("left") === "0px"
+                                            ||
+
+                                            (
+                                                Math.abs(
+                                                    $("#prizeId").css("top").replace("px","")
+                                                     - $(this).css("top").replace("px","")
+                                                ) === 100
+                                            )
+
+                                            && 
+
+                                            (
+                                                Math.abs(
+                                                    $("#prizeId").css("right").replace("px","")
+                                                     + $(this).css("left").replace("px","")
+                                                ) === 200
+                                            )
+
+
+
+                                            && 
+
+                                                $("#prizeId").css("left") === "0px"
+                                            &&
+
+                                                $("this").css("right") === "0px"
+                                        ){
+
+                                            $("#hintTwo").css({"background-color" : "255, 0, 0, 0.6"})
+
+                                        }else{
+
+                                            $("#hintTwo").css({"background-color" : "0, 0, 255, 0.6"})
+
+                                        }
+
+
+
+*/                                        //Div 2
+/*
+                                        if(
+
+                                            (
+                                                Math.abs(
+                                                    $("#prizeId").css("top").replace("px","")
+                                                     - $(this).css("top").replace("px","")
+                                                ) === 50
+                                            )
+
+                                            && 
+
+                                            (
+                                                Math.abs(
+                                                    $("#prizeId").css("right").replace("px","")
+                                                     - $(this).css("right").replace("px","")
+                                                ) === 100
+                                            )
+
+
+
+                                            && 
+
+                                                $("#prizeId").css("left") === "0px"
+
+                                            &&
+
+                                                $("this").css("left") === "0px"
+
+                                            || 
+
+                                            (
+                                                Math.abs(
+                                                    $("#prizeId").css("top").replace("px","")
+                                                     - $(this).css("top").replace("px","")
+                                                ) === 50
+                                            )
+
+                                            && 
+
+                                            (
+                                                Math.abs(
+                                                    $("#prizeId").css("left").replace("px","")
+                                                     - $(this).css("left").replace("px","")
+                                                ) === 100
+                                            )
+
+
+
+                                            && 
+
+                                                $("#prizeId").css("right") === "0px"
+                                            &&
+
+                                                $("this").css("right") === "0px"
+                                            ||
+
+                                            (
+                                                Math.abs(
+                                                    $("#prizeId").css("top").replace("px","")
+                                                     - $(this).css("top").replace("px","")
+                                                ) === 50
+                                            )
+
+                                            && 
+
+                                            (
+                                                Math.abs(
+                                                    $("#prizeId").css("left").replace("px","")
+                                                     + $(this).css("right").replace("px","")
+                                                ) === 100
+                                            )
+
+
+
+                                            && 
+
+                                                $("#prizeId").css("right") === "0px"
+                                            &&
+
+                                                $("this").css("left") === "0px"
+                                            ||
+
+                                            (
+                                                Math.abs(
+                                                    $("#prizeId").css("top").replace("px","")
+                                                     - $(this).css("top").replace("px","")
+                                                ) === 50
+                                            )
+
+                                            && 
+
+                                            (
+                                                Math.abs(
+                                                    $("#prizeId").css("right").replace("px","")
+                                                     + $(this).css("left").replace("px","")
+                                                ) === 100
+                                            )
+
+
+
+                                            && 
+
+                                                $("#prizeId").css("left") === "0px"
+                                            &&
+
+                                                $("this").css("right") === "0px"
+                                        ){
+
+                                            $("#hintTwo").css({"background-color" : "255, 0, 0, 0.6"})
+
+                                        }else{
+
+                                            $("#hintTwo").css({"background-color" : "0, 0, 255, 0.6"})
+
+                                        }
+
+                                    }
+*/
+
+
+
+                                    //Text Function / Firing Function on Balloon  AND  Shot Counter / Win Controller
+                                    
+                                    won = false;
+                                    shotCount = 0;
+
+                                    //Text Control
+
+                                    
+
+                                    $("#submit").on("click", function () {
+
+                                        num = $("#inputbox").val();
+
+                                        if(isNaN(parseInt(num)) || parseInt(num) > 100 || parseInt(num) < 1){
+
+                                            $("#hints").children("p").text("Make sure your number is between 1-100.")
+                                        }
+
+                                        simVal = ("#ball"+num).toString();
+
+                                        $(simVal).trigger('click');
+                                      
+                                    });
+
+
+
+
+                                    //Click Control
+
+                                        $(".ball").on("click", function(){
+                                            
+                                            shotCount++;
+                                            
+                                            //play sound and pop balloon
+                                            $(this).hide();
+                                            play_shot();
+
+
+                                            
+                                            
+
+                                            if(($("#prizeId").css("top") === $(this).css("top") && $("#prizeId").css("right") === $(this).css("right") && $("#prizeId").css("left") === "0px")|| ($("#prizeId").css("top") === $(this).css("top") && $("#prizeId").css("left") === $(this).css("left") && $("#prizeId").css("right") === "0px") ){
+
+                                                        play_shot();
+
+                                                        won = true;
+
+
+
+
+
+                                                               //spin
+                                                        var angle = 0;
+                                                            interval = setInterval(function(){
+                                                            angle+=.25;
+                                                            $("#prize").rotate(angle);
+                                                        },50);
+
+                        
+
+                                                        //grow shrink
+                                                        
+                                                        function growSun(){
+                                                            $("#prize").animate({width: "+=15%", height: "+=15%"}, 1200, "swing", shrinkSun);
+                                                        };
+                                                        function shrinkSun(){
+                                                            $("#prize").animate({width: "-=15%", height: "-=15%"}, 1200, "swing", growSun);
+                                                        };
+
+                                                        growSun();
+
+                                                        //alien moves
+
+                                                        function alienLeft(){
+                                                            $("#youwin").animate({top: "-=2%", left: "-=5%"}, 1200, "swing", alienMidLeft);
+                                                        };
+                                                        function alienMidLeft(){
+                                                            $("#youwin").animate({top: "+=2%", left: "+=5%"}, 1200, "swing", alienRight);
+                                                        };
+                                                        function alienRight(){
+                                                            $("#youwin").animate({top: "-=2%", left: "+=5%"}, 1200, "swing", alienMidRight);
+                                                        };
+                                                        function alienMidRight(){
+                                                            $("#youwin").animate({top: "+=2%", left: "-=5%"}, 1200, "swing", alienLeft);
+                                                        };
+
+                                                        
+
+                                                        $("#youwin").show();
+                                                        $("#youwin").animate({width: "+=75%"}, 500, "linear");
+                                                        $("#aliensays").show();
+                                                        $("#aliensays").animate({width: "+=75%"}, 500, "linear");
+                                                        alienLeft();
+                                                        $("#gameoverdiv").show();
+                                                        $("#hints").children("p").text("You Won!  Play again.")
+                                            
+                                            }
+
+                                            if(shotCount>2 && won === false){
+                                            
+                                                $("#gameover").show();
+                                                $("#gameoverdiv").show();
+                                                $("#hints").children("p").text("Game over.  Play again.")
+
+
+                                            };
+
+
+                                            //hint Arrays
+
+                                            hintLeftArr= [[62,100],[162, 50],[262, 0], [362, -50], [462, -100]];
+                                            hintRightArr = [[438,350], [338,300], [238, 250], [138, 200], [38, 150]]
+
+                                            //first shot hintOne functionality
+                                            if(shotCount===1){
+                                                divOneTop = Number($(this).css("top").replace("px","")) - 100 -282 + "px";
+
+
+
+                                                if($(this).css("left") === "0px"){
+                                                //    divOneHor = Number($(this).css("right").replace("px","")) + 10 + "px";
+                                                //    $("#hintOne").css({ "top": divOneTop,"right": divOneHor});
+                                                    for(var i =0; i < hintRightArr.length; i++){
+                                                        if(Number($(this).css("right").replace("px",""))=== hintRightArr[i][0]){
+                                                            divOneHor = hintRightArr[i][1]+ "px";
+                                                            $("#hintOne").css({ "top": divOneTop,"right": divOneHor});
+                                                        }
+
+                                                    }
+
+
+
+                                                }
+                                                if($(this).css("right") === "0px"){
+                                                    //divOneHor = Number($(this).css("left").replace("px","")) - 10 + "px";
+                                                    //$("#hintOne").css({ "top": divOneTop,"left": divOneHor});
+                                                     for(var i =0; i < hintLeftArr.length; i++){
+                                                        if(Number($(this).css("left").replace("px",""))=== hintLeftArr[i][0]){
+                                                            divOneHor = hintLeftArr[i][1]+ "px";
+                                                            $("#hintOne").css({ "top": divOneTop,"right": divOneHor});
+                                                        }
+
+                                                    }
+
+                                                }
+
+                                                if(
+
+                                                    (
+                                                        
+                                                            
+                                                            
+
+                                                            Math.abs(
+                                                                Number($("#prizeId").css("top").replace("px",""))
+                                                                 - 
+                                                                 Number($(this).css("top").replace("px",""))
+                                                            ) < 150
+
+                                                            
+                                                        
+
+                                                        && 
+
+                                                        
+                                                            Math.abs(
+                                                                Number($("#prizeId").css("right").replace("px",""))
+                                                                 - 
+                                                                 Number($(this).css("right").replace("px",""))
+                                                            ) < 201
+                                                        
+
+
+
+                                                        && 
+
+                                                            $("#prizeId").css("left") === "0px"
+
+                                                        &&
+
+                                                            $(this).css("left") === "0px"
+
+                                                    )
+                                                    ||
+                                                    ( 
+
+                                                            
+                                                                Math.abs(
+                                                                    Number($("#prizeId").css("top").replace("px",""))
+                                                                     - 
+                                                                     Number($(this).css("top").replace("px",""))
+                                                                ) < 150
+                                                            
+
+
+                                                        && 
+
+                                                            
+                                                                Math.abs(
+                                                                    Number($("#prizeId").css("left").replace("px",""))
+                                                                     - 
+                                                                     Number($(this).css("left").replace("px",""))
+                                                                ) < 201
+                                                            
+
+
+
+                                                        && 
+
+                                                            $("#prizeId").css("right") === "0px"
+                                                        &&
+
+                                                            $(this).css("right") === "0px"
+                                                    )
+                                                    ||
+                                                    (
+
+                                                        
+                                                            Math.abs(
+                                                                Number($("#prizeId").css("top").replace("px",""))
+                                                                 - 
+                                                                 Number($(this).css("top").replace("px",""))
+                                                            ) < 150
+                                                        
+
+                                                        && 
+
+                                                        
+                                                            Math.abs(
+                                                                Number($("#prizeId").css("left").replace("px",""))
+                                                                 + 
+                                                                 Number($(this).css("right").replace("px",""))
+                                                            ) < 201
+                                                        
+
+
+
+                                                        && 
+
+                                                            $("#prizeId").css("right") === "0px"
+                                                        &&
+
+                                                            $(this).css("left") === "0px"
+                                                    )
+                                                    ||
+                                                    (
+
+                                                        
+                                                            Math.abs(
+                                                                Number($("#prizeId").css("top").replace("px",""))
+                                                                 - 
+                                                                 Number($(this).css("top").replace("px",""))
+                                                            ) < 150
+                                                        
+
+                                                        && 
+
+                                                        
+                                                            Math.abs(
+                                                                Number($("#prizeId").css("right").replace("px",""))
+                                                                 + 
+                                                                 Number($(this).css("left").replace("px",""))
+                                                            ) < 201
+                                                        
+
+
+
+                                                        && 
+
+                                                            $("#prizeId").css("left") === "0px"
+                                                        &&
+
+                                                            $(this).css("right") === "0px"
+                                                    )
+                                                ){
+
+                                                    $("#hintOne").css({"background-color" : "rgba(255, 0, 0, 0.6)"})
+                                                    hintOneColor = "red";
+                                                    if($("#hintThree").css("display") !== "block"){
+                                                        $("#hintOne").fadeIn();
+                                                        $("#hints").children("p").text("Hot! Look within!")
+                                                    }
+                                                }else{
+
+                                                    $("#hintOne").css({"background-color" : "rgba(0, 0, 255, 0.6)"})
+                                                    hintOneColor = "blue";
+                                                    if($("#hintThree").css("display") !== "block"){
+                                                        $("#hintOne").fadeIn();
+                                                        $("#hints").children("p").text("Ultra cold.  Look outside!")
+                                                    }
+                                                }
+                                            }
+
+                                            ////second shot hintTwo functionality
+                                            if(shotCount===2){
+                                                if(hintOneColor === "blue"){
+
+                                                    
+                                                    $("#hintTwo").switchClass("hintTwo","hintOne");
+
+                                                    divTwoTop = Number($(this).css("top").replace("px","")) - 100 - 282 + "px";
+
+                                                    if($(this).css("left") === "0px"){
+                                                        for(var i =0; i < hintRightArr.length; i++){
+                                                            if(Number($(this).css("right").replace("px",""))=== hintRightArr[i][0]){
+                                                                divTwoHor = hintRightArr[i][1]+ "px";
+                                                                $("#hintTwo").css({ "top": divTwoTop,"right": divTwoHor});
+                                                            }
+
+                                                        }
+
+
+
+                                                    }
+                                                    if($(this).css("right") === "0px"){
+                                                    
+                                                         for(var i =0; i < hintLeftArr.length; i++){
+                                                            if(Number($(this).css("left").replace("px",""))=== hintLeftArr[i][0]){
+                                                                divTwoHor = hintLeftArr[i][1]+ "px";
+                                                                $("#hintTwo").css({ "top": divTwoTop,"right": divTwoHor});
+                                                            }
+
+                                                        }
+
+                                                    }
+
+                                                    if(
+
+                                                        (
+                                                            
+                                                                
+                                                                
+
+                                                                Math.abs(
+                                                                    Number($("#prizeId").css("top").replace("px",""))
+                                                                     - 
+                                                                     Number($(this).css("top").replace("px",""))
+                                                                ) < 150
+
+                                                                
+                                                            
+
+                                                            && 
+
+                                                            
+                                                                Math.abs(
+                                                                    Number($("#prizeId").css("right").replace("px",""))
+                                                                     - 
+                                                                     Number($(this).css("right").replace("px",""))
+                                                                ) < 201
+                                                            
+
+
+
+                                                            && 
+
+                                                                $("#prizeId").css("left") === "0px"
+
+                                                            &&
+
+                                                                $(this).css("left") === "0px"
+
+                                                        )
+                                                        ||
+                                                        ( 
+
+                                                                
+                                                                    Math.abs(
+                                                                        Number($("#prizeId").css("top").replace("px",""))
+                                                                         - 
+                                                                         Number($(this).css("top").replace("px",""))
+                                                                    ) < 150
+                                                                
+
+
+                                                            && 
+
+                                                                
+                                                                    Math.abs(
+                                                                        Number($("#prizeId").css("left").replace("px",""))
+                                                                         - 
+                                                                         Number($(this).css("left").replace("px",""))
+                                                                    ) < 201
+                                                                
+
+
+
+                                                            && 
+
+                                                                $("#prizeId").css("right") === "0px"
+                                                            &&
+
+                                                                $(this).css("right") === "0px"
+                                                        )
+                                                        ||
+                                                        (
+
+                                                            
+                                                                Math.abs(
+                                                                    Number($("#prizeId").css("top").replace("px",""))
+                                                                     - 
+                                                                     Number($(this).css("top").replace("px",""))
+                                                                ) < 150
+                                                            
+
+                                                            && 
+
+                                                            
+                                                                Math.abs(
+                                                                    Number($("#prizeId").css("left").replace("px",""))
+                                                                     + 
+                                                                     Number($(this).css("right").replace("px",""))
+                                                                ) < 201
+                                                            
+
+
+
+                                                            && 
+
+                                                                $("#prizeId").css("right") === "0px"
+                                                            &&
+
+                                                                $(this).css("left") === "0px"
+                                                        )
+                                                        ||
+                                                        (
+
+                                                            
+                                                                Math.abs(
+                                                                    Number($("#prizeId").css("top").replace("px",""))
+                                                                     - 
+                                                                     Number($(this).css("top").replace("px",""))
+                                                                ) < 150
+                                                            
+
+                                                            && 
+
+                                                            
+                                                                Math.abs(
+                                                                    Number($("#prizeId").css("right").replace("px",""))
+                                                                     + 
+                                                                     Number($(this).css("left").replace("px",""))
+                                                                ) < 201
+                                                            
+
+
+
+                                                            && 
+
+                                                                $("#prizeId").css("left") === "0px"
+                                                            &&
+
+                                                                $(this).css("right") === "0px"
+                                                        )
+                                                    ){
+
+                                                        $("#hintTwo").css({"background-color" : "rgba(255, 0, 0, 0.6)"});
+                                                        hintTwoColor = "red";
+                                                        if($("#hintThree").css("display") !== "block"){
+                                                            $("#hintTwo").fadeIn();
+                                                            $("#hints").children("p").text("Hot! Look within!")
+                                                        }
+
+                                                    }else{
+
+                                                        $("#hintTwo").css({"background-color" : "rgba(0, 0, 255, 0.6)"})
+                                                        hintTwoColor = "blue";
+                                                        if($("#hintThree").css("display") !== "block"){
+                                                            $("#hintTwo").fadeIn();
+                                                            $("#hints").children("p").text("Ultra cold. Look outside!")
+                                                        }
+                                                    }
+
+
+                                                }
+
+                                                if(hintOneColor === "red"){
+
+
+                                                    divTwoTop = Number($(this).css("top").replace("px","")) - 50 -282 + "px";
+
+                                                    if($(this).css("left") === "0px"){
+                                                        for(var i =0; i < hintRightArr.length; i++){
+                                                            if(Number($(this).css("right").replace("px",""))=== hintRightArr[i][0]){
+                                                                divTwoHor = hintRightArr[i][1]+ 50+ "px";
+                                                                $("#hintTwo").css({ "top": divTwoTop,"right": divTwoHor});
+                                                            }
+
+                                                        }
+
+
+
+                                                    }
+                                                    if($(this).css("right") === "0px"){
+                                                    
+                                                         for(var i =0; i < hintLeftArr.length; i++){
+                                                            if(Number($(this).css("left").replace("px",""))=== hintLeftArr[i][0]){
+                                                                divTwoHor = hintLeftArr[i][1]+50+ "px";
+                                                                $("#hintTwo").css({ "top": divTwoTop,"right": divTwoHor});
+                                                            }
+
+                                                        }
+
+                                                    }
+                                                    
+                                                    if(
+
+                                                            (
+                                                                
+                                                                    
+                                                                    
+
+                                                                    Math.abs(
+                                                                        Number($("#prizeId").css("top").replace("px",""))
+                                                                         - 
+                                                                         Number($(this).css("top").replace("px",""))
+                                                                    ) < 75
+
+                                                                    
+                                                                
+
+                                                                && 
+
+                                                                
+                                                                    Math.abs(
+                                                                        Number($("#prizeId").css("right").replace("px",""))
+                                                                         - 
+                                                                         Number($(this).css("right").replace("px",""))
+                                                                    ) < 101
+                                                                
+
+
+
+                                                                && 
+
+                                                                    $("#prizeId").css("left") === "0px"
+
+                                                                &&
+
+                                                                    $(this).css("left") === "0px"
+
+                                                            )
+                                                            ||
+                                                            ( 
+
+                                                                    
+                                                                        Math.abs(
+                                                                            Number($("#prizeId").css("top").replace("px",""))
+                                                                             - 
+                                                                             Number($(this).css("top").replace("px",""))
+                                                                        ) < 75
+                                                                    
+
+
+                                                                && 
+
+                                                                    
+                                                                        Math.abs(
+                                                                            Number($("#prizeId").css("left").replace("px",""))
+                                                                             - 
+                                                                             Number($(this).css("left").replace("px",""))
+                                                                        ) < 101
+                                                                    
+
+
+
+                                                                && 
+
+                                                                    $("#prizeId").css("right") === "0px"
+                                                                &&
+
+                                                                    $(this).css("right") === "0px"
+                                                            )
+                                                            ||
+                                                            (
+
+                                                                
+                                                                    Math.abs(
+                                                                        Number($("#prizeId").css("top").replace("px",""))
+                                                                         - 
+                                                                         Number($(this).css("top").replace("px",""))
+                                                                    ) < 75
+                                                                
+
+                                                                && 
+
+                                                                
+                                                                    Math.abs(
+                                                                        Number($("#prizeId").css("left").replace("px",""))
+                                                                         + 
+                                                                         Number($(this).css("right").replace("px",""))
+                                                                    ) < 101
+                                                                
+
+
+
+                                                                && 
+
+                                                                    $("#prizeId").css("right") === "0px"
+                                                                &&
+
+                                                                    $(this).css("left") === "0px"
+                                                            )
+                                                            ||
+                                                            (
+
+                                                                
+                                                                    Math.abs(
+                                                                        Number($("#prizeId").css("top").replace("px",""))
+                                                                         - 
+                                                                         Number($(this).css("top").replace("px",""))
+                                                                    ) < 75
+                                                                
+
+                                                                && 
+
+                                                                
+                                                                    Math.abs(
+                                                                        Number($("#prizeId").css("right").replace("px",""))
+                                                                         + 
+                                                                         Number($(this).css("left").replace("px",""))
+                                                                    ) < 101
+                                                                
+
+
+
+                                                                && 
+
+                                                                    $("#prizeId").css("left") === "0px"
+                                                                &&
+
+                                                                    $(this).css("right") === "0px"
+                                                            )
+                                                    ){
+
+                                                        $("#hintTwo").css({"background-color" : "rgba(255, 145, 0, 0.6)"});
+                                                        hintTwoColor = "orange";
+                                                        
+                                                        if($("#hintThree").css("display") !== "block"){
+                                                            $("#hintTwo").fadeIn();
+                                                            $("#hints").children("p").text("Ultra hot! Look within!")
+                                                        }
+
+
+                                                    }else{
+
+                                                        $("#hintTwo").css({"background-color" : "rgba(0, 0, 255, 0.6)"})
+                                                        hintTwoColor = "blue";
+                                                        if($("#hintThree").css("display") !== "block"){
+                                                            $("#hintTwo").fadeIn();
+                                                            $("#hints").children("p").text("Cold. Look outside!")
+                                                        }
+                                                    }
+
+                                                }
+                                            }
+                                            console.log(shotCount , won);
+
+                                            
+                                          /*      }
+                                                if($("this").css("right") === "0px"){
+                                                    if($("#prizeId").css("left") === $(this).css("left")){
+                                                               //spin
+                                                        var angle = 0;
+                                                        setInterval(function(){
+                                                            angle+=.25;
+                                                            $("#prize").rotate(angle);
+                                                        },50);
+
+                                                        //grow shrink
+                                                        
+                                                        function growSun(){
+                                                            $("#prize").animate({width: "+=15%", height: "+=15%"}, 1200, "swing", shrinkSun);
+                                                        };
+                                                        function shrinkSun(){
+                                                            $("#prize").animate({width: "-=15%", height: "-=15%"}, 1200, "swing", growSun);
+                                                        };
+
+                                                        growSun();                                           
+
+                                                        $("#youwin").show();
+                                                        $("#youwin").animate({width: "+=75%"}, 500, "linear");
+                                                        $("#gameoverdiv").show();
+                                                    }
+
+                                                }
+                                            }; */
+    
+                                        });
+
+
+                });
+    </script>
+    <link rel="stylesheet" href= "main.css">
+  </head>
+  
+<div id="parent">
+  
+  <div id="prehistoria">
+    <img id="comet" src="images/comet.gif">
+    <img id="dino" src="images/dino.gif">
+    <img id="dinostill" style="display:none" src="images/dinostill.gif">
+    <img id="speechbubble" src="images/bubble2.png">
+    <img id="click" src="images/click.png">
+  </div>
+  <div id="explode">
+    <img id="explode" src="images/explodeEarth.gif">
+  </div>
+  <div id="space">
+    <img id="satellite" src="images/satellite.png">
+    <img id="rotatesky" src="images/rotatesky.png">
+  </div>
+
+  
+  <div id="sound">
+    <audio id="audiotag1" src="audio/gameshowGod.mp3" preload="auto"></audio>
+    <script type="text/javascript">
+        function play_single_sound() {
+            document.getElementById('audiotag1').play();
+        }
+    </script>
+    <audio id="audiotag2" src="audio/music.mp3" preload="auto"></audio>
+    <script type="text/javascript">
+        function play_song() {
+            document.getElementById('audiotag2').play();
+        }
+
+    </script>
+    <audio id="audiotag3" src="audio/shot.mp3" preload="auto"></audio>
+    <script type="text/javascript">
+        function play_shot() {
+            document.getElementById('audiotag3').play();
+        }
+
+    </script>
+  </div>
+
+    <div id="site-wrapper">
+      <body>
+        <header>            
+            <h1 style="margin-top: 20%; margin-bottom: -20%; color:white; font-size: 30px; text-align: center; display: block;">View fullscreen with audio.</h1>
+            <h1 style="margin-top: 20%; margin-bottom: -20%; color:white; font-size: 30px; text-align: center; display: block;">Click anywhere to continue.</h1>
+
+            <img id = "logoblack" class="fs-zoom" src="images/FS-logo-white.svg" alt="fullstack-logo">
+            <img id = "logowhite" style="display: none;" class="fs-image" src="images/fslogo-w.png" alt="fullstack-logo">
+            
+        </header>
+        <div id="content">
+            <h1 id="blacktext">Guessing Game Project</h1>
+            <p id="blackguess">Guess the number between 1-100.</p>
+            <h1 id="whitetext" style="display:none;" class="white-text">Guessing Game Project</h1>
+        </div>    
+        <div id="carnival">
+
+            <h2 style="color:white;">A visual interpretation</h2>
+            <h2 style="font-size: 12px; color:white;">by Siddharth Joshi</h2>
+            
+            <div id="undercanvas">            
+                <img id="shelves" src="images/shelves.png" alt="shelves">        
+            </div>
+
+            <div id="middlecanvas1" class="middlecanvas" style="top: 263px;">
+                <img id="popball1" style="" class="popballoon" src="images/redballoon-pop.png" alt="popballoon">
+                <img id="popball2" style="" class="popballoon" src="images/blueballoon-pop.png" alt="popballoon">
+                <img id="popball3" style="" class="popballoon" src="images/greenballoon-pop.png" alt="popballoon">     
+                <img id="popball4" style="" class="popballoon" src="images/purpleballoon-pop.png" alt="popballoon">
+                <img id="popball5" style="" class="popballoon" src="images/redballoon-pop.png" alt="popballoon">
+                <img id="popball6" style="" class="popballoon" src="images/blueballoon-pop.png" alt="popballoon">
+                <img id="popball7" style="" class="popballoon" src="images/greenballoon-pop.png" alt="popballoon">     
+                <img id="popball8" style="" class="popballoon" src="images/purpleballoon-pop.png" alt="popballoon">
+                <img id="popball9" style="" class="popballoon" src="images/redballoon-pop.png" alt="popballoon">
+                <img id="popball10" style="" class="popballoon" src="images/blueballoon-pop.png" alt="popballoon">
+            </div>
+            <div id="middlecanvas2" class="middlecanvas" style="top: 311px;">
+                <img id="popball11" style="" class="popballoon" src="images/redballoon-pop.png" alt="popballoon">
+                <img id="popball12" style="" class="popballoon" src="images/blueballoon-pop.png" alt="popballoon">
+                <img id="popball13" style="" class="popballoon" src="images/greenballoon-pop.png" alt="popballoon">     
+                <img id="popball14" style="" class="popballoon" src="images/purpleballoon-pop.png" alt="popballoon">
+                <img id="popball15" style="" class="popballoon" src="images/redballoon-pop.png" alt="popballoon">
+                <img id="popball16" style="" class="popballoon" src="images/blueballoon-pop.png" alt="popballoon">
+                <img id="popball17" style="" class="popballoon" src="images/greenballoon-pop.png" alt="popballoon">     
+                <img id="popball18" style="" class="popballoon" src="images/purpleballoon-pop.png" alt="popballoon">
+                <img id="popball19" style="" class="popballoon" src="images/redballoon-pop.png" alt="popballoon">
+                <img id="popball20" style="" class="popballoon" src="images/blueballoon-pop.png" alt="popballoon">
+            </div>
+            <div id="middlecanvas3" class="middlecanvas" style="top: 361px;">
+                <img id="popball21" style="" class="popballoon" src="images/redballoon-pop.png" alt="popballoon">
+                <img id="popball22" style="" class="popballoon" src="images/blueballoon-pop.png" alt="popballoon">
+                <img id="popball23" style="" class="popballoon" src="images/greenballoon-pop.png" alt="popballoon">     
+                <img id="popball24" style="" class="popballoon" src="images/purpleballoon-pop.png" alt="popballoon">
+                <img id="popball25" style="" class="popballoon" src="images/redballoon-pop.png" alt="popballoon">
+                <img id="popball26" style="" class="popballoon" src="images/blueballoon-pop.png" alt="popballoon">
+                <img id="popball27" style="" class="popballoon" src="images/greenballoon-pop.png" alt="popballoon">     
+                <img id="popball28" style="" class="popballoon" src="images/purpleballoon-pop.png" alt="popballoon">
+                <img id="popball29" style="" class="popballoon" src="images/redballoon-pop.png" alt="popballoon">
+                <img id="popball30" style="" class="popballoon" src="images/blueballoon-pop.png" alt="popballoon">
+            </div>
+            <div id="middlecanvas4" class="middlecanvas" style="top: 412px;">
+                <img id="popball31" style="" class="popballoon" src="images/redballoon-pop.png" alt="popballoon">
+                <img id="popball32" style="" class="popballoon" src="images/blueballoon-pop.png" alt="popballoon">
+                <img id="popball33" style="" class="popballoon" src="images/greenballoon-pop.png" alt="popballoon">     
+                <img id="popball34" style="" class="popballoon" src="images/purpleballoon-pop.png" alt="popballoon">
+                <img id="popball35" style="" class="popballoon" src="images/redballoon-pop.png" alt="popballoon">
+                <img id="popball36" style="" class="popballoon" src="images/blueballoon-pop.png" alt="popballoon">
+                <img id="popball37" style="" class="popballoon" src="images/greenballoon-pop.png" alt="popballoon">     
+                <img id="popball38" style="" class="popballoon" src="images/purpleballoon-pop.png" alt="popballoon">
+                <img id="popball39" style="" class="popballoon" src="images/redballoon-pop.png" alt="popballoon">
+                <img id="popball40" style="" class="popballoon" src="images/blueballoon-pop.png" alt="popballoon">
+            </div>
+            <div id="middlecanvas5" class="middlecanvas" style="top: 466px;">
+                <img id="popball41" style="" class="popballoon" src="images/redballoon-pop.png" alt="popballoon">
+                <img id="popball42" style="" class="popballoon" src="images/blueballoon-pop.png" alt="popballoon">
+                <img id="popball43" style="" class="popballoon" src="images/greenballoon-pop.png" alt="popballoon">     
+                <img id="popball44" style="" class="popballoon" src="images/purpleballoon-pop.png" alt="popballoon">
+                <img id="popball45" style="" class="popballoon" src="images/redballoon-pop.png" alt="popballoon">
+                <img id="popball46" style="" class="popballoon" src="images/blueballoon-pop.png" alt="popballoon">
+                <img id="popball47" style="" class="popballoon" src="images/greenballoon-pop.png" alt="popballoon">     
+                <img id="popball48" style="" class="popballoon" src="images/purpleballoon-pop.png" alt="popballoon">
+                <img id="popball49" style="" class="popballoon" src="images/redballoon-pop.png" alt="popballoon">
+                <img id="popball50" style="" class="popballoon" src="images/blueballoon-pop.png" alt="popballoon">
+            </div>
+            <div id="middlecanvas6" class="middlecanvas" style="top: 522px;">
+                <img id="popball51" style="" class="popballoon" src="images/redballoon-pop.png" alt="popballoon">
+                <img id="popball52" style="" class="popballoon" src="images/blueballoon-pop.png" alt="popballoon">
+                <img id="popball53" style="" class="popballoon" src="images/greenballoon-pop.png" alt="popballoon">     
+                <img id="popball54" style="" class="popballoon" src="images/purpleballoon-pop.png" alt="popballoon">
+                <img id="popball55" style="" class="popballoon" src="images/redballoon-pop.png" alt="popballoon">
+                <img id="popball56" style="" class="popballoon" src="images/blueballoon-pop.png" alt="popballoon">
+                <img id="popball57" style="" class="popballoon" src="images/greenballoon-pop.png" alt="popballoon">     
+                <img id="popball58" style="" class="popballoon" src="images/purpleballoon-pop.png" alt="popballoon">
+                <img id="popball59" style="" class="popballoon" src="images/redballoon-pop.png" alt="popballoon">
+                <img id="popball60" style="" class="popballoon" src="images/blueballoon-pop.png" alt="popballoon">
+            </div>
+            <div id="middlecanvas7" class="middlecanvas" style="top: 573px;">
+                <img id="popball61" style="" class="popballoon" src="images/redballoon-pop.png" alt="popballoon">
+                <img id="popball62" style="" class="popballoon" src="images/blueballoon-pop.png" alt="popballoon">
+                <img id="popball63" style="" class="popballoon" src="images/greenballoon-pop.png" alt="popballoon">     
+                <img id="popball64" style="" class="popballoon" src="images/purpleballoon-pop.png" alt="popballoon">
+                <img id="popball65" style="" class="popballoon" src="images/redballoon-pop.png" alt="popballoon">
+                <img id="popball66" style="" class="popballoon" src="images/blueballoon-pop.png" alt="popballoon">
+                <img id="popball67" style="" class="popballoon" src="images/greenballoon-pop.png" alt="popballoon">     
+                <img id="popball68" style="" class="popballoon" src="images/purpleballoon-pop.png" alt="popballoon">
+                <img id="popball69" style="" class="popballoon" src="images/redballoon-pop.png" alt="popballoon">
+                <img id="popball70" style="" class="popballoon" src="images/blueballoon-pop.png" alt="popballoon">
+            </div>
+            <div id="middlecanvas8" class="middlecanvas" style="top: 623px;">
+                <img id="popball71" style="" class="popballoon" src="images/redballoon-pop.png" alt="popballoon">
+                <img id="popball72" style="" class="popballoon" src="images/blueballoon-pop.png" alt="popballoon">
+                <img id="popball73" style="" class="popballoon" src="images/greenballoon-pop.png" alt="popballoon">     
+                <img id="popball74" style="" class="popballoon" src="images/purpleballoon-pop.png" alt="popballoon">
+                <img id="popball75" style="" class="popballoon" src="images/redballoon-pop.png" alt="popballoon">
+                <img id="popball76" style="" class="popballoon" src="images/blueballoon-pop.png" alt="popballoon">
+                <img id="popball77" style="" class="popballoon" src="images/greenballoon-pop.png" alt="popballoon">     
+                <img id="popball78" style="" class="popballoon" src="images/purpleballoon-pop.png" alt="popballoon">
+                <img id="popball79" style="" class="popballoon" src="images/redballoon-pop.png" alt="popballoon">
+                <img id="popball80" style="" class="popballoon" src="images/blueballoon-pop.png" alt="popballoon">
+            </div>
+            <div id="middlecanvas9" class="middlecanvas" style="top: 673px;">
+                <img id="popball81" style="" class="popballoon" src="images/redballoon-pop.png" alt="popballoon">
+                <img id="popball82" style="" class="popballoon" src="images/blueballoon-pop.png" alt="popballoon">
+                <img id="popball83" style="" class="popballoon" src="images/greenballoon-pop.png" alt="popballoon">     
+                <img id="popball84" style="" class="popballoon" src="images/purpleballoon-pop.png" alt="popballoon">
+                <img id="popball85" style="" class="popballoon" src="images/redballoon-pop.png" alt="popballoon">
+                <img id="popball86" style="" class="popballoon" src="images/blueballoon-pop.png" alt="popballoon">
+                <img id="popball87" style="" class="popballoon" src="images/greenballoon-pop.png" alt="popballoon">     
+                <img id="popball88" style="" class="popballoon" src="images/purpleballoon-pop.png" alt="popballoon">
+                <img id="popball89" style="" class="popballoon" src="images/redballoon-pop.png" alt="popballoon">
+                <img id="popball90" style="" class="popballoon" src="images/blueballoon-pop.png" alt="popballoon">
+            </div>
+            <div id="middlecanvas10" class="middlecanvas" style="top: 723px;">
+                <img id="popball91" style="" class="popballoon" src="images/redballoon-pop.png" alt="popballoon">
+                <img id="popball92" style="" class="popballoon" src="images/blueballoon-pop.png" alt="popballoon">
+                <img id="popball93" style="" class="popballoon" src="images/greenballoon-pop.png" alt="popballoon">     
+                <img id="popball94" style="" class="popballoon" src="images/purpleballoon-pop.png" alt="popballoon">
+                <img id="popball95" style="" class="popballoon" src="images/redballoon-pop.png" alt="popballoon">
+                <img id="popball96" style="" class="popballoon" src="images/blueballoon-pop.png" alt="popballoon">
+                <img id="popball97" style="" class="popballoon" src="images/greenballoon-pop.png" alt="popballoon">     
+                <img id="popball98" style="" class="popballoon" src="images/purpleballoon-pop.png" alt="popballoon">
+                <img id="popball99" style="" class="popballoon" src="images/redballoon-pop.png" alt="popballoon">
+                <img id="popball100" style="" class="popballoon" src="images/blueballoon-pop.png" alt="popballoon">
+            </div>
+            
+            <div id="hintClip">
+                <div id="hintOne" class="hintOne" ></div>
+                <div id="hintTwo" class="hintTwo" ></div>
+                <div id="hintThree" class="finalHint" ></div>
+            </div>
+
+
+
+
+            <div id="prizeId" class="prizediv">
+                <img id="prize" class="prize" src="images/sun.png" alt="prize">
+            </div>
+
+
+
+            <div id="ball1" class= "ball" style="top:272px; right: 438px;">
+                <img class="ballimg" src="images/balloon-red.png" alt="redballoon">
+            </div>
+            <div id="ball2" class= "ball" style="top:272px; right: 338px;">
+                <img class="ballimg" src="images/balloon-blue.png" alt="blueballoon">
+            </div>
+            <div id="ball3" class= "ball" style="top:272px; right: 238px;">
+                <img class="ballimg" src="images/balloon-green.png" alt="greenballoon">
+            </div>  
+            <div id="ball4" class= "ball" style="top:272px; right: 138px;">
+                <img class="ballimg" src="images/balloon-purple.png" alt="purpleballoon">
+            </div>                    
+            <div id="ball5" class= "ball" style="top:272px; right: 38px;">
+                <img class="ballimg" src="images/balloon-red.png" alt="redballoon">
+            </div>
+            <div id="ball6" class= "ball" style="top:272px; left: 62px;">
+                <img class="ballimg" src="images/balloon-blue.png" alt="blueballoon">
+            </div>
+            <div id="ball7" class= "ball" style="top:272px; left: 162px;">
+                <img class="ballimg" src="images/balloon-green.png" alt="greenballoon">
+            </div>
+            <div id="ball8" class= "ball" style="top:272px; left: 262px;">
+                <img class="ballimg" src="images/balloon-purple.png" alt="purpleballoon">
+            </div>  
+            <div id="ball9" class= "ball" style="top:272px; left: 362px;">
+                <img class="ballimg" src="images/balloon-red.png" alt="redballoon">
+            </div>                    
+            <div id="ball10" class= "ball" style="top:272px; left: 462px;">
+                <img class="ballimg" src="images/balloon-blue.png" alt="blueballoon">
+            </div>
+            
+
+
+            <div id="ball11" class= "ball" style="top:322px; right: 438px;">
+                <img class="ballimg" src="images/balloon-red.png" alt="redballoon">
+            </div>
+            <div id="ball12" class= "ball" style="top:322px; right: 338px;">
+                <img class="ballimg" src="images/balloon-blue.png" alt="blueballoon">
+            </div>
+            <div id="ball13" class= "ball" style="top:322px; right: 238px;">
+                <img class="ballimg" src="images/balloon-green.png" alt="greenballoon">
+            </div>  
+            <div id="ball14" class= "ball" style="top:322px; right: 138px;">
+                <img class="ballimg" src="images/balloon-purple.png" alt="purpleballoon">
+            </div>                    
+            <div id="ball15" class= "ball" style="top:322px; right: 38px;">
+                <img class="ballimg" src="images/balloon-red.png" alt="redballoon">
+            </div>
+            <div id="ball16" class= "ball" style="top:322px; left: 62px;">
+                <img class="ballimg" src="images/balloon-blue.png" alt="blueballoon">
+            </div>
+            <div id="ball17" class= "ball" style="top:322px; left: 162px;">
+                <img class="ballimg" src="images/balloon-green.png" alt="greenballoon">
+            </div>
+            <div id="ball18" class= "ball" style="top:322px; left: 262px;">
+                <img class="ballimg" src="images/balloon-purple.png" alt="purpleballoon">
+            </div>  
+            <div id="ball19" class= "ball" style="top:322px; left: 362px;">
+                <img class="ballimg" src="images/balloon-red.png" alt="redballoon">
+            </div>                    
+            <div id="ball20" class= "ball" style="top:322px; left: 462px;">
+                <img class="ballimg" src="images/balloon-blue.png" alt="blueballoon">
+            </div>
+
+
+
+
+
+
+            <div id="ball21" class= "ball" style="top:372px; right: 438px;">
+                <img class="ballimg" src="images/balloon-red.png" alt="redballoon">
+            </div>
+            <div id="ball22" class= "ball" style="top:372px; right: 338px;">
+                <img class="ballimg" src="images/balloon-blue.png" alt="blueballoon">
+            </div>
+            <div id="ball23" class= "ball" style="top:372px; right: 238px;">
+                <img class="ballimg" src="images/balloon-green.png" alt="greenballoon">
+            </div>  
+            <div id="ball24" class= "ball" style="top:372px; right: 138px;">
+                <img class="ballimg" src="images/balloon-purple.png" alt="purpleballoon">
+            </div>                    
+            <div id="ball25" class= "ball" style="top:372px; right: 38px;">
+                <img class="ballimg" src="images/balloon-red.png" alt="redballoon">
+            </div>
+            <div id="ball26" class= "ball" style="top:372px; left: 62px;">
+                <img class="ballimg" src="images/balloon-blue.png" alt="blueballoon">
+            </div>
+            <div id="ball27" class= "ball" style="top:372px; left: 162px;">
+                <img class="ballimg" src="images/balloon-green.png" alt="greenballoon">
+            </div>
+            <div id="ball28" class= "ball" style="top:372px; left: 262px;">
+                <img class="ballimg" src="images/balloon-purple.png" alt="purpleballoon">
+            </div>  
+            <div id="ball29" class= "ball" style="top:372px; left: 362px;">
+                <img class="ballimg" src="images/balloon-red.png" alt="redballoon">
+            </div>                    
+            <div id="ball30" class= "ball" style="top:372px; left: 462px;">
+                <img class="ballimg" src="images/balloon-blue.png" alt="blueballoon">
+            </div>
+
+
+
+            <div id="ball31" class= "ball" style="top:422px; right: 438px;">
+                <img class="ballimg" src="images/balloon-red.png" alt="redballoon">
+            </div>
+            <div id="ball32" class= "ball" style="top:422px; right: 338px;">
+                <img class="ballimg" src="images/balloon-blue.png" alt="blueballoon">
+            </div>
+            <div id="ball33" class= "ball" style="top:422px; right: 238px;">
+                <img class="ballimg" src="images/balloon-green.png" alt="greenballoon">
+            </div>  
+            <div id="ball34" class= "ball" style="top:422px; right: 138px;">
+                <img class="ballimg" src="images/balloon-purple.png" alt="purpleballoon">
+            </div>                    
+            <div id="ball35" class= "ball" style="top:422px; right: 38px;">
+                <img class="ballimg" src="images/balloon-red.png" alt="redballoon">
+            </div>
+            <div id="ball36" class= "ball" style="top:422px; left: 62px;">
+                <img class="ballimg" src="images/balloon-blue.png" alt="blueballoon">
+            </div>
+            <div id="ball37" class= "ball" style="top:422px; left: 162px;">
+                <img class="ballimg" src="images/balloon-green.png" alt="greenballoon">
+            </div>
+            <div id="ball38" class= "ball" style="top:422px; left: 262px;">
+                <img class="ballimg" src="images/balloon-purple.png" alt="purpleballoon">
+            </div>  
+            <div id="ball39" class= "ball" style="top:422px; left: 362px;">
+                <img class="ballimg" src="images/balloon-red.png" alt="redballoon">
+            </div>                    
+            <div id="ball40" class= "ball" style="top:422px; left: 462px;">
+                <img class="ballimg" src="images/balloon-blue.png" alt="blueballoon">
+            </div>
+
+
+
+            <div id="ball41" class= "ball" style="top:476px; right: 438px;">
+                <img class="ballimg" src="images/balloon-red.png" alt="redballoon">
+            </div>
+            <div id="ball42" class= "ball" style="top:476px; right: 338px;">
+                <img class="ballimg" src="images/balloon-blue.png" alt="blueballoon">
+            </div>
+            <div id="ball43" class= "ball" style="top:476px; right: 238px;">
+                <img class="ballimg" src="images/balloon-green.png" alt="greenballoon">
+            </div>  
+            <div id="ball44" class= "ball" style="top:476px; right: 138px;">
+                <img class="ballimg" src="images/balloon-purple.png" alt="purpleballoon">
+            </div>                    
+            <div id="ball45" class= "ball" style="top:476px; right: 38px;">
+                <img class="ballimg" src="images/balloon-red.png" alt="redballoon">
+            </div>
+            <div id="ball46" class= "ball" style="top:476px; left: 62px;">
+                <img class="ballimg" src="images/balloon-blue.png" alt="blueballoon">
+            </div>
+            <div id="ball47" class= "ball" style="top:476px; left: 162px;">
+                <img class="ballimg" src="images/balloon-green.png" alt="greenballoon">
+            </div>
+            <div id="ball48" class= "ball" style="top:476px; left: 262px;">
+                <img class="ballimg" src="images/balloon-purple.png" alt="purpleballoon">
+            </div>  
+            <div id="ball49" class= "ball" style="top:476px; left: 362px;">
+                <img class="ballimg" src="images/balloon-red.png" alt="redballoon">
+            </div>                    
+            <div id="ball50" class= "ball" style="top:476px; left: 462px;">
+                <img class="ballimg" src="images/balloon-blue.png" alt="blueballoon">
+            </div>
+
+
+
+
+            <div id="ball51" class= "ball" style="top:532px; right: 438px;">
+                <img class="ballimg" src="images/balloon-red.png" alt="redballoon">
+            </div>
+            <div id="ball52" class= "ball" style="top:532px; right: 338px;">
+                <img class="ballimg" src="images/balloon-blue.png" alt="blueballoon">
+            </div>
+            <div id="ball53" class= "ball" style="top:532px; right: 238px;">
+                <img class="ballimg" src="images/balloon-green.png" alt="greenballoon">
+            </div>  
+            <div id="ball54" class= "ball" style="top:532px; right: 138px;">
+                <img class="ballimg" src="images/balloon-purple.png" alt="purpleballoon">
+            </div>                    
+            <div id="ball55" class= "ball" style="top:532px; right: 38px;">
+                <img class="ballimg" src="images/balloon-red.png" alt="redballoon">
+            </div>
+            <div id="ball56" class= "ball" style="top:532px; left: 62px;">
+                <img class="ballimg" src="images/balloon-blue.png" alt="blueballoon">
+            </div>
+            <div id="ball57" class= "ball" style="top:532px; left: 162px;">
+                <img class="ballimg" src="images/balloon-green.png" alt="greenballoon">
+            </div>
+            <div id="ball58" class= "ball" style="top:532px; left: 262px;">
+                <img class="ballimg" src="images/balloon-purple.png" alt="purpleballoon">
+            </div>  
+            <div id="ball59" class= "ball" style="top:532px; left: 362px;">
+                <img class="ballimg" src="images/balloon-red.png" alt="redballoon">
+            </div>                    
+            <div id="ball60" class= "ball" style="top:532px; left: 462px;">
+                <img class="ballimg" src="images/balloon-blue.png" alt="blueballoon">
+            </div>
+
+
+
+
+            <div id="ball61" class= "ball" style="top:585px; right: 438px;">
+                <img class="ballimg" src="images/balloon-red.png" alt="redballoon">
+            </div>
+            <div id="ball62" class= "ball" style="top:585px; right: 338px;">
+                <img class="ballimg" src="images/balloon-blue.png" alt="blueballoon">
+            </div>
+            <div id="ball63" class= "ball" style="top:585px; right: 238px;">
+                <img class="ballimg" src="images/balloon-green.png" alt="greenballoon">
+            </div>  
+            <div id="ball64" class= "ball" style="top:585px; right: 138px;">
+                <img class="ballimg" src="images/balloon-purple.png" alt="purpleballoon">
+            </div>                    
+            <div id="ball65" class= "ball" style="top:585px; right: 38px;">
+                <img class="ballimg" src="images/balloon-red.png" alt="redballoon">
+            </div>
+            <div id="ball66" class= "ball" style="top:585px; left: 62px;">
+                <img class="ballimg" src="images/balloon-blue.png" alt="blueballoon">
+            </div>
+            <div id="ball67" class= "ball" style="top:585px; left: 162px;">
+                <img class="ballimg" src="images/balloon-green.png" alt="greenballoon">
+            </div>
+            <div id="ball68" class= "ball" style="top:585px; left: 262px;">
+                <img class="ballimg" src="images/balloon-purple.png" alt="purpleballoon">
+            </div>  
+            <div id="ball69" class= "ball" style="top:585px; left: 362px;">
+                <img class="ballimg" src="images/balloon-red.png" alt="redballoon">
+            </div>                    
+            <div id="ball70" class= "ball" style="top:585px; left: 462px;">
+                <img class="ballimg" src="images/balloon-blue.png" alt="blueballoon">
+            </div>
+
+
+
+
+             <div id="ball71" class= "ball" style="top:635px; right: 438px;">
+                <img class="ballimg" src="images/balloon-red.png" alt="redballoon">
+            </div>
+            <div id="ball72" class= "ball" style="top:635px; right: 338px;">
+                <img class="ballimg" src="images/balloon-blue.png" alt="blueballoon">
+            </div>
+            <div id="ball73" class= "ball" style="top:635px; right: 238px;">
+                <img class="ballimg" src="images/balloon-green.png" alt="greenballoon">
+            </div>  
+            <div id="ball74" class= "ball" style="top:635px; right: 138px;">
+                <img class="ballimg" src="images/balloon-purple.png" alt="purpleballoon">
+            </div>                    
+            <div id="ball75" class= "ball" style="top:635px; right: 38px;">
+                <img class="ballimg" src="images/balloon-red.png" alt="redballoon">
+            </div>
+            <div id="ball76" class= "ball" style="top:635px; left: 62px;">
+                <img class="ballimg" src="images/balloon-blue.png" alt="blueballoon">
+            </div>
+            <div id="ball77" class= "ball" style="top:635px; left: 162px;">
+                <img class="ballimg" src="images/balloon-green.png" alt="greenballoon">
+            </div>
+            <div id="ball78" class= "ball" style="top:635px; left: 262px;">
+                <img class="ballimg" src="images/balloon-purple.png" alt="purpleballoon">
+            </div>  
+            <div id="ball79" class= "ball" style="top:635px; left: 362px;">
+                <img class="ballimg" src="images/balloon-red.png" alt="redballoon">
+            </div>                    
+            <div id="ball80" class= "ball" style="top:635px; left: 462px;">
+                <img class="ballimg" src="images/balloon-blue.png" alt="blueballoon">
+            </div>
+
+
+
+
+
+            <div id="ball81" class= "ball" style="top:685px; right: 438px;">
+                <img class="ballimg" src="images/balloon-red.png" alt="redballoon">
+            </div>
+            <div id="ball82" class= "ball" style="top:685px; right: 338px;">
+                <img class="ballimg" src="images/balloon-blue.png" alt="blueballoon">
+            </div>
+            <div id="ball83" class= "ball" style="top:685px; right: 238px;">
+                <img class="ballimg" src="images/balloon-green.png" alt="greenballoon">
+            </div>  
+            <div id="ball84" class= "ball" style="top:685px; right: 138px;">
+                <img class="ballimg" src="images/balloon-purple.png" alt="purpleballoon">
+            </div>                    
+            <div id="ball85" class= "ball" style="top:685px; right: 38px;">
+                <img class="ballimg" src="images/balloon-red.png" alt="redballoon">
+            </div>
+            <div id="ball86" class= "ball" style="top:685px; left: 62px;">
+                <img class="ballimg" src="images/balloon-blue.png" alt="blueballoon">
+            </div>
+            <div id="ball87" class= "ball" style="top:685px; left: 162px;">
+                <img class="ballimg" src="images/balloon-green.png" alt="greenballoon">
+            </div>
+            <div id="ball88" class= "ball" style="top:685px; left: 262px;">
+                <img class="ballimg" src="images/balloon-purple.png" alt="purpleballoon">
+            </div>  
+            <div id="ball89" class= "ball" style="top:685px; left: 362px;">
+                <img class="ballimg" src="images/balloon-red.png" alt="redballoon">
+            </div>                    
+            <div id="ball90" class= "ball" style="top:685px; left: 462px;">
+                <img class="ballimg" src="images/balloon-blue.png" alt="blueballoon">
+            </div>
+
+
+
+             <div id="ball91" class= "ball" style="top:735px; right: 438px;">
+                <img class="ballimg" src="images/balloon-red.png" alt="redballoon">
+            </div>
+            <div id="ball92" class= "ball" style="top:735px; right: 338px;">
+                <img class="ballimg" src="images/balloon-blue.png" alt="blueballoon">
+            </div>
+            <div id="ball93" class= "ball" style="top:735px; right: 238px;">
+                <img class="ballimg" src="images/balloon-green.png" alt="greenballoon">
+            </div>  
+            <div id="ball94" class= "ball" style="top:735px; right: 138px;">
+                <img class="ballimg" src="images/balloon-purple.png" alt="purpleballoon">
+            </div>                    
+            <div id="ball95" class= "ball" style="top:735px; right: 38px;">
+                <img class="ballimg" src="images/balloon-red.png" alt="redballoon">
+            </div>
+            <div id="ball96" class= "ball" style="top:735px; left: 62px;">
+                <img class="ballimg" src="images/balloon-blue.png" alt="blueballoon">
+            </div>
+            <div id="ball97" class= "ball" style="top:735px; left: 162px;">
+                <img class="ballimg" src="images/balloon-green.png" alt="greenballoon">
+            </div>
+            <div id="ball98" class= "ball" style="top:735px; left: 262px;">
+                <img class="ballimg" src="images/balloon-purple.png" alt="purpleballoon">
+            </div>  
+            <div id="ball99" class= "ball" style="top:735px; left: 362px;">
+                <img class="ballimg" src="images/balloon-red.png" alt="redballoon">
+            </div>                    
+            <div id="ball100" class= "ball" style="top:735px; left: 462px;">
+                <img class="ballimg" src="images/balloon-blue.png" alt="blueballoon">
+            </div>
+            
+            
+            <div id="gameoverdiv">
+                <img id="gameover" src="images/gameover.png" alt="gameover">
+                <img id="youwin" src="images/youwin.png" alt="youwin">
+                <img id="aliensays" src="images/aliensays.png" alt="aliensays">
+            </div>
+
+            <div id="hand">
+                <img id="handimg" src="images/hand.png" alt="hand">
+            </div>
+
+            <div id ="numbers">
+                <img id="numLeft" src="images/numLeft.png" alt="numLeft">
+                <img id="numRight" src="images/numRight.png" alt="numRight">
+            </div>
+
+            <div id="instructions">
+                <img id="sagan" src="images/sagan.png" alt="sagan">
+                <img id="introText" src="images/instructions.png" alt="instructions">
+            </div>
+
+
+
+
+
+
+
+
+
+                                   
+        </div>
+        <div id="content" class="black-open">    
+            <div id="hints">
+                <p>Can you guess the number 1-100?</p>
+            </div>
+            <input type="text" id="inputbox" class="oldinput" placeholder="Type your guess here">
+            <div id="submit-box">
+                
+                <button id="submit" type="button">Submit Your Guess</button>
+            </div>
+            <div id="more-buttons">
+                <button id="play-again" type="button">Play Again</button>
+                <button id="hint" type="button">Hint</button>
+                <img id="soundbutton" src="images/audio3.png">
+            </div> 
+        </div>
+      </body>
+    </div>
+  </div> 
+  <div id= "startDiv">
+  </div>
+</div>
+   
+</html>

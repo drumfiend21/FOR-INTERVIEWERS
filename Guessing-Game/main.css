@@ -1,0 +1,713 @@
+canvas{
+
+	display: block;
+	margin: 0 auto;
+
+}
+
+#parent{
+
+overflow-x: hidden;
+
+
+}
+
+
+#carnival{
+  height: 608px;
+
+}
+
+
+#startDiv{
+  position: absolute;
+  margin: 0 auto;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+}
+
+#undercanvas {
+  cursor: url(images/scope.cur), crosshair;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  width: 500px;
+  height: 515px;
+  top: 271px;
+  left: 15px;
+  right: 0;
+  z-index: -4;
+
+}
+
+#shelves{
+  cursor: url(images/scope.cur), crosshair;
+  position: absolute;
+  margin: 0 auto;
+  top:269px;
+  left: 14px;
+  right: 0px;
+  width: 500px;
+  height: 515px;
+  border: 2px solid;
+  border-radius: 25px;
+  border-color: purple;
+  z-index: -4;
+
+}
+
+#hintClip {
+  cursor: url(images/scope.cur), crosshair;
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+  padding-right: 3px;
+  border: none;
+  border-radius: 15px;
+  width: 495px;
+  height: 506px;
+  top: -529px;
+  left: 0px;
+  right: 0px;
+
+}
+
+.hintOne{
+
+ cursor: url(images/scope.cur), crosshair;
+  position: absolute;
+  margin: 0 auto;
+  padding-top: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
+  z-index: -3;
+  height: 250px;
+  width: 250px;
+  border: none;
+  border-radius: 25px;
+
+
+}
+
+.hintTwo{
+
+ cursor: url(images/scope.cur), crosshair;
+  position: absolute;
+  margin: 0 auto;
+  padding-top: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
+  z-index: -3;
+  height: 150px;
+  width: 150px;
+  border: none;
+  border-radius: 25px;
+
+
+}
+
+.finalHint{
+ 
+  cursor: url(images/scope.cur), crosshair;
+  position: absolute;
+  margin: 0 auto;
+  padding-top: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
+  z-index: -3;
+  height: 50px;
+  width: 50px;
+  border: none;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.6);
+
+
+
+
+}
+
+.middlecanvas {
+
+  cursor: url(images/scope.cur), crosshair;
+  position: absolute;
+  margin: 0 auto;
+  padding-top: 12px;
+  margin-bottom: 17px;
+  width: 500px;
+  height: 50.18px;
+  left: 20px;
+  right: 0;
+  z-index: -2;
+
+}
+
+
+
+
+.popballoon{
+  cursor: url(images/scope.cur), crosshair;
+  float: left;
+  height: 50.18px;
+  width: 35px;
+  padding-top: -5px;
+  padding-left: 2px;
+  padding-right: 13px;
+  z-index: -2;
+}
+
+
+#prizeId{
+  
+  position: absolute;
+  margin: 0 auto;
+  width: 40px;
+  height: 48px;
+  padding-top: 6px;
+  right: 0px;
+  left: 0px;
+  z-index: -1;
+
+}
+
+.prize{
+
+  width: 38px;
+  height: 38px;
+
+
+}
+
+
+.ball{
+  cursor: url(images/scope.cur), crosshair;
+  position: absolute;
+  margin: 0 auto;
+  width: 40px;
+  height: 48px;
+  padding-top: 0px;
+  right: 0;
+  left: 0;
+  z-index: 1;
+
+}
+
+.ballimg {
+
+  position: absolute;
+  margin: 0 auto;
+  width: 40px;
+  height: 50px;
+  padding-top: 0px;
+  right: 0;
+  left: 0;
+}
+
+
+#numbers{
+  
+  position: absolute;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  width: 590px;
+  height: 515px;
+  top: 271px;
+  left: 0px;
+  right: 0px;
+  z-index: -3;
+
+
+}
+
+#numLeft{
+  right: 200px;
+  left: 0px;
+  height: 515px;
+
+}
+
+#numRight{
+  height: 515px;
+  position: absolute;
+  left: 550px;
+}
+
+
+#gameover{
+
+  position: absolute;
+  margin: 0 auto;
+  padding-top: 0px;
+  top: 152px;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  height: 185px;
+  width: 400px ;
+
+
+}
+
+
+#youwin{
+
+  position: absolute;
+  margin: 0 auto;
+  padding-top: 0px;
+  top: 35px;
+  right: 200px;
+  left: 0;
+  z-index: 1;
+  width: 20px ;
+
+
+}
+
+#aliensays{
+
+  position: absolute;
+  margin: 0 auto;
+  padding-top: 0px;
+  width: 8px;
+  top: -210px;
+  right: 0px;
+  left: 200px;
+  z-index: 1;
+
+
+}
+
+
+#gameoverdiv {
+  
+  position: absolute;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  width: 500px;
+  height: 690px;
+  top: 271px;
+  left: 15px;
+  right: 0;
+  z-index: 2;
+
+}
+
+
+#hand{
+  
+  cursor: url(images/scope.cur), crosshair;
+  position: absolute;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  /*width: 714.75px;
+  height: 750px;*/
+  width: 1437px;
+  height: 1759px;
+  top: 71px;
+  left: -100px;
+  right: 0px;
+  z-index: 3;
+
+
+}
+
+#handimg{
+
+/*width: 714.75px;
+height: 750px;*/
+padding-left: 20px;
+width: 1437px;
+height: 1759px;
+
+}
+
+#instructions{
+  position: absolute;
+  margin: 0 auto;
+  top:269px;
+  left: 14px;
+  right: 0px;
+  width: 500px;
+  height: 515px;
+  z-index: 1;
+
+}
+
+#sagan{
+
+position:absolute;
+width: 100%;
+z-index: 1;
+
+}
+
+#introText{
+
+position:absolute;
+width: 100%;
+z-index: 2;
+
+}
+
+
+
+
+
+
+
+/*
+#canvas{
+
+  cursor: url(images/scope.cur), crosshair;
+
+  width: 500px;
+  height: 515px;
+
+}
+*/
+
+
+#canvas {
+  cursor: url(images/scope.cur), crosshair;
+  position: absolute;
+  margin: 0 auto;
+  width: 500px;
+  height: 515px;
+  top: 271px;
+  left: 15px;
+  right: 0;
+/*  background-color: transparent;*/
+  z-index: 0;
+}
+
+
+/*#canvas2{
+  cursor: url(images/scope.cur), crosshair;
+  position: absolute;
+  margin: 0 auto;
+  width: 500px;
+  height: 515px;
+  top: 271px;
+  left: 15px;
+  right: 0;
+  z-index: 0;
+}*/
+
+
+
+
+
+
+h1, h2 {
+
+	text-align: center;
+}
+
+
+.white-text{
+
+	color: white;
+}
+
+html{
+
+	font-family: 'Nunito', sans-serif;
+	color: black;
+}
+
+.fs-image {
+
+    display: block;
+    margin: 0 auto 1rem;
+    
+
+}
+
+.fs-image-center {
+
+	display: block;
+	max-width: 90%;
+	margin: 0 auto;
+
+}
+
+.fs-zoom {
+
+    display: block;
+    /*margin: 300px auto;*/
+    margin: 200px auto;  
+    width: 100%;
+    height: auto;
+
+}
+
+#submit-box, #more-buttons {
+
+  display: block;
+  margin: 5px auto;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+
+}
+
+
+.grey-bg {
+
+	/*background: #999999;*/
+	background-image: url(images/dinobg2.jpg);
+	width: 100%;
+	height: auto;
+}
+
+.cosmic-bg {
+
+	 background-image: url("images/nl.jpg");
+	 width: 100%;
+	 height: auto;
+
+
+
+
+}
+
+.game-box{
+
+	margin: 0 auto;
+	width: 500px;
+	height: 500px;
+
+}
+
+#hints {
+
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    color: red;
+    font-size: 18px;
+	padding-bottom: 20px;
+	margin: 0 auto 10px;
+	width: 500px;
+	height: 30px;
+	border: 2px solid; 
+	border-radius: 25px; 
+	border-color: purple; 
+	background-color: black;
+
+}
+
+
+.oldguess{
+
+	width: 100px;
+	height: 100px;
+
+
+}
+
+.guess {
+
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    color: red;
+    font-size: 18px;
+	border: 2px solid; 
+	border-radius: 25px; 
+	border-color: purple; 
+	background-color: black;
+
+}
+
+.oldinput {
+
+text-align: center;
+display: block;
+width: 200px;
+height: 100px;
+margin:0 auto;
+
+}
+
+.newInput {
+
+	display: block;
+	width: 500px;
+	height: 45px;
+	margin:0 auto;
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    color: #a9a9a9;
+    font-size: 18px;
+	border: 2px solid; 
+	border-radius: 25px; 
+	border-color: purple; 
+	background-color: black;
+
+}
+
+.button {
+
+width: 80px;
+height: 30px;
+margin: 5px auto 5px;
+padding-top: 5px;
+border: 1px solid;
+border-radius: 25px;
+background-color: white;
+font-family: 'Orbitron', sans-serif;
+text-align: center;
+color: purple;
+font-size: 16px;
+button:focus {outline:0;}
+
+}
+
+input, button:active {
+outline: none;
+border: none;
+}
+
+input, button:focus {outline:0;}
+
+#content{
+
+	display:none;
+
+}
+
+#site-wrapper {
+
+
+	width: 90%;
+	margin: 0 auto;
+
+}
+
+#popcall{
+
+}
+
+/*
+#over { 
+       margin: 0 auto;
+       font-size:5em; 
+       position:absolute; 
+       top: 50px; 
+       z-index:2 
+}
+*/
+
+#comet{
+
+position:absolute;
+width: 5%;
+top: 0%;
+left: 100%;
+z-index:2;
+
+}
+
+#speechbubble{
+
+position:absolute;
+width: 0%;
+top: 15%;
+left: 40%;
+z-index:2;
+
+}
+
+#dino {
+
+position:absolute;
+width: 40%;
+top:20%;
+left:-40%;
+z-index:2;
+
+}
+
+#click{
+
+position:absolute;
+width: 0%;
+top: 40%;
+left: 70%;
+z-index:2;
+
+}
+
+#explode{
+
+position:absolute;
+width: 50%;
+top: -100%;
+left: -9%;
+z-index:2;
+
+}
+
+
+
+#soundbutton{
+
+padding-top: 0.5%;
+display: block;
+width: 3%;
+margin: 0 auto;
+
+
+}
+
+#blackguess{
+
+	text-align: center;
+	margin: -10px auto 20px ;
+	width: 100%;
+	color: white;
+
+}
+
+#blacktext{
+
+	color:white;
+}
+
+
+
+#rotatesky{
+
+position:absolute;
+width: 100%;
+top: 100px;
+left: 10px;
+z-index: -2;
+opacity: 0.5;
+
+
+}
+
+
+#satellite{
+
+position:absolute;
+width: 10%;
+top: 100px;
+right: -10%;
+z-index:-1;
+
+}
+
+header h1 {
+
+padding-top: 10px;
+margin: 0px auto;
+width: 100%;
+
+}
+
+
+
+
