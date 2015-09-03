@@ -2,3 +2,4 @@
 
 Fullstack Academy workshop.
 
+Play it Live @ http://gameoflife.bitballoon.com/
