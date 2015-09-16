@@ -1,0 +1,288 @@
+* {
+  box-sizing: border-box; }
+
+fullstack-logo {
+  display: block; }
+  fullstack-logo img {
+    display: block;
+    width: 100%; }
+
+navbar {
+  display: block;
+  background: #a1a1a1; }
+  navbar fullstack-logo {
+    padding-top: 10px;
+    margin-right: 20px;
+    width: 30px; }
+  navbar a {
+    color: white; }
+    navbar a:hover {
+      color: white; }
+  navbar .nav > li > a {
+    cursor: pointer; }
+    navbar .nav > li > a.active {
+      color: #f30046; }
+    navbar .nav > li > a:hover {
+      transition: color 0.2s; }
+    navbar .nav > li > a:focus {
+      color: #f30046;
+      background: transparent; }
+  navbar .login-button {
+    float: right;
+    margin-top: 8px; }
+  navbar .welcome {
+    float: right;
+    margin-top: 12px; }
+    navbar .welcome span {
+      color: white; }
+    navbar .welcome a {
+      color: #f30046;
+      cursor: pointer; }
+
+#home fullstack-logo {
+  padding-top: 30px;
+  width: 150px;
+  margin: 0 auto; }
+#home h1 {
+  margin-top: 40px;
+  text-align: center; }
+
+#about {
+  width: 1340px;
+  margin: 0 auto;
+  padding: 50px 100px; }
+  #about p {
+    width: 400px;
+    margin: 0 auto;
+    text-align: justify;
+    font-size: 22px;
+    font-weight: 300;
+    float: left; }
+  #about .carousel {
+    float: right;
+    width: 600px;
+    overflow: hidden;
+    margin: 0 auto; }
+    #about .carousel .carousel-control {
+      background: none; }
+    #about .carousel .carousel-indicators {
+      display: none; }
+    #about .carousel img {
+      width: 100%;
+      height: 500px;
+      display: block;
+      margin: 0 auto; }
+
+tutorial-section {
+  display: block;
+  width: 90%;
+  margin: 10px auto;
+  padding: 20px 0 60px 0; }
+  tutorial-section > h1 {
+    margin: 20px 0 40px 0;
+    text-align: center;
+    font-weight: bold; }
+
+tutorial-video {
+  display: block;
+  width: 600px;
+  margin: 0 auto; }
+  tutorial-video h1 {
+    font-weight: 300;
+    font-size: 24px;
+    margin-bottom: 15px; }
+  tutorial-video iframe {
+    width: 600px;
+    height: 400px; }
+
+tutorial-section-menu {
+  display: block; }
+  tutorial-section-menu:after {
+    content: "";
+    display: table;
+    clear: both; }
+  tutorial-section-menu ul {
+    margin-left: 23px;
+    list-style-type: none;
+    font-weight: 300; }
+    tutorial-section-menu ul li {
+      float: left;
+      margin-right: 40px;
+      padding: 10px;
+      cursor: pointer; }
+      tutorial-section-menu ul li:hover {
+        background: #f3f3f3; }
+
+#login-form {
+  width: 60%;
+  margin: 0 auto; }
+
+.iframe-fadeout {
+  opacity: 0;
+  -webkit-animation: iframefadeout .1s;
+  /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: iframefadeout .1s;
+  /* Firefox < 16 */
+  -ms-animation: iframefadeout .1s;
+  /* Internet Explorer */
+  -o-animation: iframefadeout .1s;
+  /* Opera < 12.1 */
+  animation: iframefadeout .1s; }
+
+#haiti-button {
+  display: block;
+  margin: 0 auto;
+  padding: 10px; }
+
+#check {
+  display: block;
+  position: relative;
+  margin: 0 auto; }
+
+h4 {
+  text-align: center;
+  font-family: 'Oxygen', sans-serif; }
+
+#enter-info-color-top {
+  background-color: #E3E3E3;
+  height: 150px;
+  width: 100%; }
+
+#authorizing {
+  margin-top: 90px; }
+  #authorizing #authorizing-spinner {
+    display: block;
+    position: relative;
+    margin: 0 auto; }
+  #authorizing h5 {
+    text-align: center;
+    font-family: 'Oxygen', sans-serif;
+    margin-bottom: 10px; }
+
+#enter-info-color-bottom {
+  border-top-style: solid;
+  border-top-width: thin;
+  border-top-color: white;
+  background-color: #F0F0F0;
+  padding: 30px;
+  height: 346px; }
+  #enter-info-color-bottom button {
+    background: green;
+    width: 150px;
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: -100px;
+    color: white; }
+  #enter-info-color-bottom p {
+    text-align: center;
+    font-family: 'Oxygen', sans-serif; }
+  #enter-info-color-bottom .btn:focus {
+    background-color: red; }
+
+p {
+  font-size: 10px;
+  font-family: 'Oxygen', sans-serif; }
+
+h1, h2, h3, label {
+  font-family: 'Oxygen', sans-serif; }
+
+@keyframes iframefadeout {
+  from {
+    opacity: 1; }
+
+  to {
+    opacity: 0; } }
+
+/* Firefox < 16 */
+@-moz-keyframes iframefadeout {
+  from {
+    opacity: 1; }
+
+  to {
+    opacity: 0; } }
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes iframefadeout {
+  from {
+    opacity: 1; }
+
+  to {
+    opacity: 0; } }
+
+/* Internet Explorer */
+@-ms-keyframes iframefadeout {
+  from {
+    opacity: 1; }
+
+  to {
+    opacity: 0; } }
+
+/* Opera < 12.1 */
+@-o-keyframes iframefadeout {
+  from {
+    opacity: 1; }
+
+  to {
+    opacity: 0; } }
+
+#account-page {
+  background-color: #E3E3E3; }
+  #account-page #your-account {
+    background-color: white;
+    position: relative;
+    display: block;
+    padding: 20px;
+    margin: 0 auto;
+    width: 450px;
+    border-style: hidden;
+    border-radius: 15px;
+    border-width: 3px; }
+    #account-page #your-account input {
+      border-radius: 3px;
+      border-width: 1px; }
+    #account-page #your-account h4 {
+      text-align: center; }
+    #account-page #your-account #change-pass {
+      position: relative;
+      display: block;
+      margin: 0 auto;
+      margin-top: 10px; }
+    #account-page #your-account button {
+      margin-left: 10px;
+      border-radius: 3px;
+      background-color: green;
+      color: white;
+      background-image: linear-gradient(#62c462, #51a351);
+      height: 30px;
+      padding: 4px; }
+
+#editPage {
+  background-color: #E3E3E3;
+  height: 100%; }
+  #editPage #editAccount {
+    background-color: white;
+    position: relative;
+    display: block;
+    padding: 20px;
+    margin: 0 auto;
+    margin-top: -20px;
+    width: 450px;
+    border-style: hidden;
+    border-radius: 15px;
+    border-width: 3px; }
+    #editPage #editAccount h4 {
+      color: green;
+      text-align: left; }
+    #editPage #editAccount button {
+      margin-left: 10px;
+      border-radius: 3px;
+      background-color: green;
+      color: white;
+      background-image: linear-gradient(#62c462, #51a351);
+      height: 30px;
+      padding: 4px;
+      display: inline-block; }
+    #editPage #editAccount input {
+      border-radius: 3px;
+      border-width: 1px; }
