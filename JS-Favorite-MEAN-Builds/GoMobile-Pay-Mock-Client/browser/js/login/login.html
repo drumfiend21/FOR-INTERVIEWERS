@@ -1,0 +1,45 @@
+<div id="login-page">
+    <h2>Log in to get your bowl of microgreens today!</h2>
+    <form id="login-form" name="loginForm" ng-submit="loginForm.$valid && sendLogin(login)">
+
+        <alert type="danger" ng-show="error">
+            {{ error }}
+        </alert>
+
+        <div class="form-group input-fields">
+            <label for="email">Email address</label>
+            <input type="text" ng-model="login.email" class="form-control" id="email" placeholder="Enter email">
+        </div>
+        <div class="form-group input-fields">
+            <label for="login-password">Password</label>
+            <input type="password" ng-model="login.password" class="form-control" id="login-password" placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-success btn-default input-btn">Submit</button><br><br> 
+    </form>
+    <div id="password">
+        <button type="submit" class="btn btn-warning btn-default input-btn" ng-click="isCollapsed = !isCollapsed">I forgot my password</button>
+        <form collapse="isCollapsed" class='col-md-12 reset-form'>
+            <input type="text"/>
+            <button class='btn btn-success btn-sm input-btn'>reset password</button>
+        </form>
+    </div>
+    <div id="third-party-login">
+
+        <!-- Facebook Login -->
+        <button class="btn btn-default btn-large btn-success fa fa-facebook-square fa-lg" onClick="window.location='/auth/facebook';"><h5 class='3rd-party'> Login with Facebook
+        </h5></button>   
+
+        <!-- Google Login -->
+        <button class="btn btn-default btn-large btn-success fa fa-google-plus-square fa-lg" onClick="window.location='/auth/google';"><h5 class='3rd-party'> Login with Google+</h5></button>
+
+        <!-- Twitter Login -->
+
+        <!-- cannot authenticate -->
+
+       <!--  <button class="btn btn-default fa fa-twitter-square fa-lg" onClick="window.location='/auth/twitter';">  Login with Twitter </button><br><br> -->
+
+        <!-- Sign up -->
+<!--         <button ng-show="!user" ui-sref="signup" class="btn login-button">  Sign up!</button><br><br>
+ -->
+    </div>
+</div>

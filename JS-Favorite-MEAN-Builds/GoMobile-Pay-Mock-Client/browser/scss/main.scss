@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box;
+}
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@font-face {
+	font-family: "Flaticon";
+	src: url("flaticon.eot");
+	src: url("flaticon.eot#iefix") format("embedded-opentype"),
+	url("flaticon.woff") format("woff"),
+	url("flaticon.ttf") format("truetype"),
+	url("flaticon.svg") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+	font-family: Flaticon;
+        font-size: 20px;
+font-style: normal;
+margin-left: 20px;
+}.flaticon-leaf32:before {
+	content: "\e000";
+}
+.flaticon-rounded44:before {
+	content: "\e001";
+}
+
+
+@import 'directives/main';
+@import 'home/main';
+@import 'about/main';
+@import 'tutorial/main';
+@import 'login/main';
+@import 'signup/main';
+@import 'cart/main';
+@import 'reset/main';
+@import 'micros/main';
+@import 'blends/main';
+@import 'orders/main';
+@import 'admin/main';

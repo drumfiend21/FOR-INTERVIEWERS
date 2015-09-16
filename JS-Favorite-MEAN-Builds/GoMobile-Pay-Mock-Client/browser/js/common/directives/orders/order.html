@@ -1,0 +1,32 @@
+<div class="container">
+	<div class"order-info">
+		<div class="col-md-6">
+			<h4>Order Id: {{ order._id }}</h4>
+			<h4>Order Date: {{ order.date | date }}</h4>
+			<div class='order-blends' ng-repeat='blend in order.blend'>
+				<ul>
+					<li>
+						<a>{{ blend.name }}</a>
+						<h4>Quantity: {{ blend.quantity }}<h4>
+						<h4>Current status: {{ order.status }}</h4>
+					</li>
+				</ul>
+			</div>
+			<!-- <div class="micro-thumbnails">
+	  			<img class="leaf" ng-repeat="micro in blend.micros" ng-src="{{micro.image}}">
+	  		</div> -->
+			<form ng-show='isAdmin'>
+				<select class='form-control' ng-model='order.status'>
+					<option ng-repeat='status in orderStatus'>{{ status }}
+					</option>
+				</select>
+
+				<button ng-click='editorder()' class='btn btn-success'>Update Status
+				</button>
+
+				<button ng-click='deleteorder()' class='btn btn-delete'>Delete Order
+				</button><br><br>
+			</form>
+		</div>
+	</div>
+</div>

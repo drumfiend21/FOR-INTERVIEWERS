@@ -1,0 +1,16 @@
+<section class="container" id='orders'>
+	<div id="orders-page">
+
+		<div><h3>Based on your most recent order, it seems that you like {{ randomMicro }}</h3></div>
+		<div><h3>We would recommend you try {{ recommendedBlend.name }}!</h3></div>
+
+	<div class='row'>
+		<div>
+			<order order='order' ng-repeat='order in orders' editorder='editOrder(order._id, order)' deleteorder='deleteOrder(order._id)'></order>
+		</div>
+	</div>
+
+
+			<!-- <a ng-repeat='order in allOrders'><pre>{{ order | json }}</pre></a> -->
+	</div>
+</section>

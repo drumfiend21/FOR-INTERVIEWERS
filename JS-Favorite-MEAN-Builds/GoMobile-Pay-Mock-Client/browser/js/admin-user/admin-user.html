@@ -1,0 +1,29 @@
+<section id="admin-user" ng-show="isAdmin">
+    <div id="manage-user">
+    	<h3>Manage User</h3>
+    	<form class='user-form' ng-submit="getUserByEmail(userlist)">
+        <div class='input-group' id='user-search'>
+            <input 
+                type="text"
+                class="form-control"
+                ng-model="userlist" 
+                placeholder="user email">
+            <span class="input-group-btn">
+                <button 
+                    type="submit" 
+                    class="btn btn-success"
+                    id='find-user'
+                    type="button">
+                    Find User
+                </button>
+            </span>
+        </div>
+        <br/>
+      </form>
+    	<div class='manage-panel' ng-show='foundUser'>
+    		<input type='checkbox' ng-model='promoteBool' ng-change='promoteToAdmin(promoteBool)'>Promote to admin?</input>
+            <input type='checkbox' ng-model='resetBool' ng-change='resetPassword(resetBool)'>Reset user password?</input>
+    		<button class='btn btn-danger delete-user' ng-click='deleteUser(foundUser.user._id)'>Delete User</button>
+    	</div>
+    </div>
+</section>

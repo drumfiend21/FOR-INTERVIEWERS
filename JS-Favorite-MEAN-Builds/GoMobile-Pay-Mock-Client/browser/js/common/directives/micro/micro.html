@@ -1,0 +1,31 @@
+<div class="container micro">
+
+  
+	<div class='row micro-info'>
+
+	    <div class='col-md-6'>
+            <img ng-src="{{ micro.image }}" class="md-col-6 micro-image">
+        </div>
+
+        <div class="col-md-6 description">
+            <h1>{{ micro.name }}</h1>
+            <h3>Spice level: {{ micro.spice }}</h3>
+<!--             <h4>Price/lb: ${{ micro.price }}</h4> -->
+            <p>Description: {{ micro.description }}</p>
+            <h6>Inventory: {{ micro.inventory }}</h6>
+            <button class='btn btn-success' ng-show='isAdmin' ng-click="isCollapsed = !isCollapsed">
+                edit micro
+            </button>
+            <br/>
+            <form collapse="isCollapsed" name='editMicroForm' class='row col-md-12' id='edit-inventory' ng-submit='editMicroForm.$valid && editMicro(micro.inventory)'>
+                <h4>Update Inventory: </h4>
+                <input type='number' ng-model='micro.inventory'/>
+                <!-- <h4>Edit Price: </h4>
+                <input type='number' ng-model='micro.price'/> -->
+                <button class='btn btn-success'>Update</button>
+            </form>
+        </div>
+
+ 	</div>
+
+</div>

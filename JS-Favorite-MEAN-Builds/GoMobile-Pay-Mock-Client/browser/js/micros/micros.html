@@ -1,0 +1,100 @@
+<section id="micros" class='container-fluid'>
+    <div class='row micros'>
+        <div class='col-md-12' id='top-panel'>
+            <div class='row filter-bar'>
+                <div class='col-md-6'>
+                    <button class='btn btn-success micros-button' ng-click='showAllMicros()'>show all micros</button>
+                    <button class='btn btn-success micros-button' ng-repeat='level in levels' ng-click='showMicrosBySpice(level)'>{{level}}</button>
+                </div>
+                <form class='col-md-6' ng-submit="showMicroByName(whichName)">
+                    <div class='input-group' id='micros-search'>
+                        <input 
+                            type="text"
+                            class="form-control"
+                            ng-model="whichName" 
+                            placeholder="Type in a micro name to find it">
+                        <span class="input-group-btn">
+                            <button 
+                                type="submit" 
+                                class="btn btn-success"
+                                type="button">
+                                Find Micro
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+            
+
+        </div>
+        <div class='row' id='bottom-panel'>
+            
+            <micro micro='micro' class='col-md-12' ng-repeat='micro in micros'>
+            </micro>
+
+
+        </div>
+        <div class='row' ng-show='isAdmin'>
+            <div class='col-md-6 create-micro'>
+                <form name='newMicroForm' ng-submit='newMicroForm.$valid && addMicro(newMicro)' novalidate>
+
+                    <div class='form-group'>
+                        <label for="name">Name</label>
+                        <input name='name' class="form-control" ng-model='newMicro.name' required></input>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="spice">Spice Level</label>
+                        <select class="form-control" name='spice' ng-model='newMicro.spice'>
+                            <option ng-repeat='level in levels'>{{ level }}</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="price">Price</label>
+                        <input class="form-control" name='price' ng-model='newMicro.price'></input>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <input class="form-control" name="description" ng-model='newMicro.description'></input>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="image">Link to Image</label>
+                        <input class="form-control" name="image" ng-model='newMicro.image'></input>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inventory">Inventory</label>
+                        <input class="form-control" name="inventory" ng-model='newMicro.inventory'></input>
+                    </div>
+                    <button class='btn btn-success' type='submit'>add micro!</button>
+
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <rating ng-model="rating" max="5" ></rating> -->
+    
+    
+    <!-- 
+    <pre>{{ micros | json}}</pre>
+</section>

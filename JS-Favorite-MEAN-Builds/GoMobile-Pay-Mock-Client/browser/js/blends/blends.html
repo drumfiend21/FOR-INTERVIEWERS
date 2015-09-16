@@ -1,0 +1,82 @@
+<section id="blends">
+        <div class="container" id="left-panel">
+            <a 
+            class="btn btn-warning"
+            ng-click="isNewBlendFormOpen = true"
+            >
+            Create a Blend 
+            </a>
+            <a 
+            ng-click='showAllBlends()' 
+            class="btn blend-items">
+            Show All Blends
+            </a>
+            
+            <a 
+            class= "btn btn-success" 
+            ng-repeat="blend in allBlends"
+            ng-click="showBlendByName(blend.name)"
+            ng-hide="isNewBlendFormOpen"
+            >
+            {{blend.name}}
+            </a>
+
+        </div> 
+        <div class="container" id="right-panel">
+                <blend ng-hide="isNewBlendFormOpen" ng-repeat="blend in blends" blend="blend" deleteblend="deleteBlend(blend._id)"></blend>
+                
+                <div ng-show="isNewBlendFormOpen">
+                    <blend blend="newBlend" is-new-blend-form-open="true"></blend>
+
+                    <form name="newBlendForm" 
+                    ng-submit='newBlendForm.$valid && addBlend(newBlend)' novalidate>
+                        <div class="form-group">
+                            <h2><u>Step 1: Select your Bowl Size</u> </h2>
+                            <button class="btn btn-warning btn-size" ng-click="setPrice(12)">Large</button>
+                            <button class="btn btn-warning btn-size" ng-click="setPrice(8)">Small</button>
+                        </div>
+                        <div class='form-group'>
+                           <h2> <u>Step 2: Select your micros</u></h2>
+                           <div class='micro-selections' ng-repeat="micro in allMicros">
+                              <label>{{micro.name}}</label>
+                               <input 
+                               type="checkbox" 
+                               ng-model="selectedMicros[$index].selected" 
+                               ng-change="refreshNewBlend(selectedMicros[$index])">
+                               </input>     
+                           </div>
+                        </div>
+                        <div class='form-group'>
+                            <h2> <u>Step 3: name your blend</u></h2>
+                            <label for="name">Name</label>
+                            <input name='name' class="form-control" ng-model='newBlend.name' required></input>
+                        </div>
+                        <button class='btn btn-success' type='submit'>add blend!</button>
+                    </form>
+                </div>
+
+        <!--    <rating ng-model="rating" max="5" ></rating> -->
+                <!-- <micro micro='micro' ng-repeat="micro in micros"></micro> -->
+<!--                 <input ng-model="whichNameToGet"></input>
+                <button ng-click='showBlendByName(whichNameToGet)'>Show Blend By Name</button>
+                <button ng-click='deleteBlend("557b3e5db65a3bfe377ed7ef")'>delete kitten :/</button> -->
+                <!-- <pre>{{ blends | json}}</pre> -->
+
+
+<!--                 <h3>Which TO edit</h3>
+                <input ng-model="whichToEdit"></input>
+                <button class='btn btn-warning' ng-click='loadBlendToEdit(whichToEdit)'>Load To Edit</button>
+                <form name="editBlendForm" ng-submit='editBlendForm.$valid && editBlend(whichToEdit, editedBlend)' novalidate>
+                    <div class='form-group'>
+                        <label for="name">Name</label>
+                        <input name='name' class="form-control" ng-model='editedBlend.name' required></input>
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Price</label>
+                        <input class="form-control" name='price' ng-model='editedBlend.price'></input>
+                    </div>
+                    <button class='btn btn-danger' type='submit'>edit blend!</button>
+                </form> -->
+<!--                   <div>Icons made by <a href="http://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>             is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div>
+ -->        </div>
+</section>

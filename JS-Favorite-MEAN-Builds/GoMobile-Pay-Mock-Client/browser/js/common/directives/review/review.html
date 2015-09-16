@@ -1,0 +1,29 @@
+<div class='container review'>
+	<accordion>
+	<accordion-group heading="Show Reviews">
+		<div class='review-content'>
+			<div class="well well-sm" ng-repeat='review in revArr'>
+				<rating ng-model="review.rating" max="5" readonly="true"></rating>
+				<p>{{ review.comment }}</p>
+			</div> 
+		</div>
+	</accordion-group>
+	<accordion-group heading="Write Review" ng-show="userId" class='edit-review'>
+		<form ng-submit='newReview(rating, comment)'>
+			<rating ng-model="rating"></rating>
+			<br/>
+			<label>Comment:</label>
+			<textarea type='text-field' ng-model='comment' id='comment'></textarea>
+			<button type="submit" class='btn btn-success btn-xs'>Submit Review</button>
+		</form>
+	</accordion-group>
+	</accordion>
+<!-- 	<button class="btn btn-default toggle-review" ng-click="isCollapsed = !isCollapsed">Show Reviews</button>
+
+	<div collapse="isCollapsed" class='review-content'>
+		<div class="well well-sm">
+			<rating ng-model="review.rating" max="5" readonly="true"></rating>
+			<p>{{ review.comment }}</p>
+		</div> 
+	</div> -->
+</div>

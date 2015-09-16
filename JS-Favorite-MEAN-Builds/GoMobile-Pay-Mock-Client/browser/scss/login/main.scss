@@ -1,0 +1,46 @@
+#login-page{
+  color: #606060;
+  #login-form {
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  .input-fields {
+    font-family: 'Indie Flower', cursive;
+    font-size: 20px;
+  }
+
+  #third-party-login {
+  	width: 60%;
+  	margin: 0 auto;
+  }
+
+  .input-btn {
+    font-family: 'Indie Flower', cursive;
+  }
+
+  h5 {
+      font-family: 'Indie Flower', cursive;
+  }
+
+  #google {
+    font-family: 'Indie Flower', cursive;
+  }
+
+  h2 {
+    font-family: 'Indie Flower', cursive;
+    text-align: center;
+    padding: 20px;
+  }
+
+  #password {
+    width: 60%;
+    margin: 0 auto;
+    padding-bottom: 20px;
+  }
+
+  .reset-form {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}

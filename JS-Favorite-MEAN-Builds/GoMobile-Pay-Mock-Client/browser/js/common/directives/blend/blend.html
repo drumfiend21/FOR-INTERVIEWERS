@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row blend-listing">
+	  <div class="col-md-6">
+	  		<div class="micro-thumbnails">
+	  			<img class="leaf" ng-repeat="micro in blend.micros" ng-src="{{micro.image}}">
+	  		</div>
+		    <img class="bowl" src="/rounded44.svg">
+	  </div>
+    <div class="col-md-6 blend-dir">
+      	<div class="row">
+      		<div class="blend-info col-sm-6">
+		      	<h2>{{ blend.name }}</h2>
+				<ul>
+		       	 <li ng-repeat="micro in blend.micros">{{micro.name}}</li>
+				</ul>
+      		</div>
+      		<div class="blend-price col-sm-6">
+		        <h3> {{ blend.price * quantity | currency}}</h3>
+		        <form 
+		        name="addToCartForm" 
+		        ng-submit="addToCartForm.$valid && addToCart(blend, quantity)"
+		        novalidate
+		        ng-hide="isNewBlendFormOpen"
+		        >
+		        	<label> Quantity </label>
+			        <input class="quantity-input" ng-model="quantity" required type="number" min="1"></input>
+			        <button class="btn btn-success btn-span" type="submit">Add to Cart!</button>
+		        </form>
+			     <button class="btn btn-danger btn-span" ng-click="deleteblend()" ng-show="isAdmin && !isNewBlendFormOpen">Delete Blend</button>
+      		</div>
+      	</div>
+      	<div class="row">
+      		<review class='review'review="blend.reviews" blend='blend' ng-hide="isNewBlendFormOpen"></review>
+      	</div>
+    </div>
+  </div>
+</div>

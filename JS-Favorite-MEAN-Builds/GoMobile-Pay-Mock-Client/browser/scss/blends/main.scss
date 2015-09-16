@@ -1,0 +1,150 @@
+#blends {
+	display: table;
+	margin-top: -20px;
+	height: 100%;
+	#left-panel{
+		display: table-cell;
+		width: 23%;
+		min-width: 140px;
+		background-color: #bfbfbf;
+		float: none;
+		a {
+			width: 100%;
+			font-family: 'Indie Flower', cursive;
+			font-size: 20px;
+
+		}
+		.container {
+			width: 100%;
+		}
+		.blend-items{
+			background-color: #448944;
+			color: white;
+		}
+	}
+	#right-panel{
+		padding-top: 40px;
+		display: table-cell;
+		float: none;
+		vertical-align: top;
+		.container{
+			width: 100%;
+		}
+		button{
+			display: block;
+			// width: 100%;
+			font-size: 15px;
+			font-family: 'Indie Flower', cursive;
+			margin-bottom: 5px;
+		}
+		h2 {
+			font-family: 'Indie Flower', cursive;
+		}
+		.toggle-review {
+			width: 100%;
+		}
+		.btn-span {
+			width: 100%;
+		}
+		h3 {
+			// font-family: arial;
+			font-size: 30px;
+			display: inline-block;
+			float: left;
+		}
+
+		form {
+			display: inline-block;
+			float: right;
+		}
+		.quantity-input {
+			display: inline-block;
+			font-family: arial;
+			font-size: 15px;
+			width: 50px;
+			margin-bottom: 5px;
+		}
+
+		.blend-price{
+			padding-top: 60px;
+		}
+		.btn-size{
+			display: inline-block;
+		}
+	}
+}
+
+.review {
+	width: 100%;
+	form {
+		width: 100%;
+		float: left;
+		label{
+			float: left;
+			display: block;
+		}
+		textarea {
+			float: left;
+			width: 100%;
+		}
+	}
+}
+
+.micro-selections {
+	display: inline-block;
+	font-size: 20px;
+	font-family: 'Indie Flower', cursive;
+	input{
+		margin-right: 40px;
+	}
+}
+
+.review {
+	float: left;
+}
+
+.leaf {
+	width: 32%;
+	height: 32%;
+	display: inline-block;
+}
+.bowl {
+	width: 50%;
+	height: 50%; 
+	display: block;
+	margin-top: -65px;
+	// margin-bottom: -55px;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	// z-index: -1;
+}
+.micro-thumbnails {
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.blend-dir {
+	font-family: 'Indie Flower', cursive;
+	color: #606060;
+}
+
+.blend-info {
+
+	// text-align: center;
+	vertical-align: middle;
+}
+
+.blend-price {
+
+}
+.side {
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+// .blend-listing {
+// 	display: flex;
+// 	align-items: center; 
+// }

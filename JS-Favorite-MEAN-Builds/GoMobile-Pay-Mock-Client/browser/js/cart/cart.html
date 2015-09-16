@@ -1,0 +1,100 @@
+
+
+<div class="cart container">
+<h1>MOCK WEB APP CHECKOUT</h1> <p> (Thanks Team MeanGreens!)</p>
+
+
+<h2>Your Cart</h2>
+  <table class="table table-hover">
+    <thead>
+      <tr class="success">
+        <th>Blend</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Subtotal</th>
+        <th>Remove</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="item in items">
+        <td>{{ item.name }}</td>
+        <td>
+        <input type="number" min="0" ng-model="item.quantity">
+        </input>
+        </td>
+        <td></td>
+        <td>HTG 146.00</td>
+        <td><a href ng-click="removeItem($index)">X</a></td>
+      </tr>
+      <tr>
+        <td> The Mega Bowl </td>
+        <td> 1 </td>
+        <td> HTG 146.00 </td>
+        <td> HTG 146.00 </td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- <button class='btn btn-success' ng-click="checkout(items)">Checkout</button> -->
+
+
+  <!-- TCHO PAY MOCK -->
+  <!-- BUTTON CONTAINER HTML -->
+  <div id="button-container" style="width: 50px; height: 50px; margin: 0 auto;">
+      <button id="checkout-button">Checkout</button>
+    <!-- BUTTON CONTAINER SCRIPT -->
+      <script id="tchopay-script" src="http://localhost:1337/tchopay.js" class="" data-key="pk_43c3de5c36c7cab5a8d7690c7aafb146a3336698" data-amount="146" data-transactionHashValue="" data-timestamp="" data-notrack="">
+      </script>
+  </div>
+
+
+  <!-- IFRAME LOADER SCRIPT -->
+  <script>
+
+    var checkoutComplete = function(transactionOutcomeObject){
+      
+      //FOR WEB APP DEVELOPER:
+      //Make http/ajax call here 
+      //to your web app server to "confirmation route"
+      //Send an object that contains
+      //    -transactionOutcomeObject
+
+      $.ajax({
+        method: "POST",
+        url: "orders/confirm",
+        data: transactionOutcomeObject
+      })
+      .done(function( success ) {
+        //if successful confirmation response, set variable for TchoPay to resolve iframe state
+        //to "transaction completed" for buyer
+        if(success===1){
+          transactionFinalized = true;
+        }
+        if(success===2){
+        //if due to a communication error with TchoPay, their server did not approve your
+        //call, signify a transactionError, which TchoPay will use to resolve the iframe 
+        //to an error state.
+          transactionError = true;
+        }
+        if(success===3){
+        //this is your server response to an incumbent outcome object that did not authenticate as coming from TchoPay
+            //choose your recourse to implement here
+            //eg. redirect to an error page/view
+
+        }
+      });
+    }
+
+  </script>
+
+
+
+
+
+  <button class='btn btn-success' ng-click="clearCart()">Clear Cart</button>
+
+</div>
+
+
+
+

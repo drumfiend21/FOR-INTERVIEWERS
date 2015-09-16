@@ -1,0 +1,19 @@
+<div class="reset-page">
+<form id="reset-form" name="resetForm" ng-submit="resetForm.$valid && resetUserPassword(reset)">
+
+    <alert type="danger" ng-show="error">
+        {{ error }}
+    </alert>
+    <p><h2>Please reset your password today!</h2></p><p><h2>Either you forgot your password or it's too old that we recommend you reset it.</h2></p>
+
+    <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="text" ng-model="reset.email" class="form-control" id="email" placeholder="Enter your email address again">
+    </div>
+    <div class="form-group">
+        <label for="reset-password">Password</label>
+        <input type="password" ng-model="reset.password" class="form-control" id="reset-password" placeholder="Enter your new password here">
+    </div>
+    <button type="submit" class="btn btn-default btn-success">Submit</button>
+</form>
+</div>
