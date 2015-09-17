@@ -50,15 +50,4 @@ var schema = new mongoose.Schema({
 
 schema.statics.createOurTransactionId = createOurTransactionId;
 
-// schema.pre('save', function (next) {
-
-//     if (this.isModified('timestamp')) {
-//         this.ourTransactionId = this.constructor.createOurTransactionId();  
-//     }
-
-//     next();
-
-// });
-
-
 mongoose.model('SuspectTransaction', schema);

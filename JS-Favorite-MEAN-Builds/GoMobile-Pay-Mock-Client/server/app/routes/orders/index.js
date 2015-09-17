@@ -9,7 +9,6 @@ var _ = require('lodash');
 var crypto = require('crypto');
 var request = require('request');
 
-
 module.exports = router;
 
 var apiSecret = "sk_9b9ea3790c6bdbbe36d7a4ac7ad8501ddadaa7de";
@@ -27,7 +26,6 @@ function isAuthenticatedUser (req, res, next) {
 	}
 }
 
-
 //Authenticate that outcome object is coming from TchoPay
 var createConfirmOutcomeHash = function (secret, timestamp, outcomeKey) {
    var hash = crypto.createHash('sha1');
@@ -37,13 +35,8 @@ var createConfirmOutcomeHash = function (secret, timestamp, outcomeKey) {
    return "oh_"+hash.digest('hex');
 };
 
-
-
-
 // runs on page load, generates hash and timestamp for tchopay
 router.get('/init', function (req, res, next){
-
-
 
     var createTransactionHash = function (secret, timestamp) {
        var hash = crypto.createHash('sha1');
@@ -62,7 +55,7 @@ router.get('/init', function (req, res, next){
     	timestamp : timestamp,
     	transactionHash: transactionHash
     }
-    console.log("initObject to be sent to front end",initObject)
+
 	res.send(initObject);
 	
 }); 
@@ -73,27 +66,17 @@ router.post('/confirm', function (req, res, next){
 
 	//intakes transactionOutcomeObject on req.body
     var transactionOutcomeObject = req.body
-    console.log("1. you hit the MOCK APP SERVER final confirm route with tchotcho outcome object: ", req.body)
-
-    console.log("1.5 is this hitting?")
 
     //Store confirmation outcome hash
 	var confirmOutcomeHash = createConfirmOutcomeHash(apiSecret, req.body.timestamp, req.body.key)
-
-
-      console.log("2. Authenticating hash comparison: ", confirmOutcomeHash === req.body.hashed)
       
       //Compare confirmation outcome to incumbent outcome received 
       if(confirmOutcomeHash === req.body.hashed){
-
-      	console.log("3. posting receipt for confirmation: ", transactionOutcomeObject)
 
         //this outcome incumbent is authenticated as sourced from TchoPay
         request.post({url:'http://localhost:1337/api/checkout/confirm-transaction',
         	form: transactionOutcomeObject},
         	function optionalCallback(err, httpResponse, body) {
-
-          	console.log("4. Received confirmation back from Tchopay.  Complete. ", body)
 
           //error handling if no confirmation response from TchoPay server
           if(err){
@@ -104,10 +87,6 @@ router.post('/confirm', function (req, res, next){
           //expect response containing same transactionOutcomeObject
           //with 'confirmed' property set to 'true'
           var transactionReceipt = JSON.parse(body);
-          // console.log("BODY, ", body)
-          console.log("transactionReceipt typeof,", typeof(transactionReceipt) )
-          console.log("has own Property(confirmed)?, ", transactionReceipt.hasOwnProperty("confirmed"))
-          // console.log("body confirmed, ", body[3])
 
           //Check that TchoPay has authenticated the transaction receipt 
           //by changing the 'confirmed' property to true
@@ -130,15 +109,10 @@ router.post('/confirm', function (req, res, next){
       }else{
         //the incumbent outcome object did not authenticate as coming from TchoPay
         //choose your recourse
-        // res.send(2)
         console.log("Hash did not evaluate");
         res.send({res: 0});
-      }
-
-	
+      }	
 }); 
-
-
 
 // get all Orders
 router.get('/', isAuthenticatedUser, function (req, res, next){

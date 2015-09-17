@@ -1,0 +1,70 @@
+ <div class="container">
+        <div id="splitlayout" class="splitlayout">
+            <div class="intro">
+                <div class="side side-left">
+                    <header class="codropsheader clearfix">
+                        <h1>Caked Up</h1>
+                    </header>
+                    <div class="intro-content">
+                        <h1>LEFT</h1>
+                    </div>
+                    <div class="overlay"></div>
+                </div>
+                <div class="side side-right">
+                    <div class="intro-content">
+                        <h1>RIGHT</h1>
+                    </div>
+                    <div class="overlay"></div>
+                </div>
+            </div><!-- /intro -->
+            <div class="page page-right">
+                <div class="page-inner">
+                    <section>
+                        <h2>RIGHT CONTENT</h2>
+                    </section>
+                </div><!-- /page-inner -->
+            </div><!-- /page-right -->
+            <div class="page page-left">
+                <div class="page-inner">
+                    <section>
+                        <h2>LEFT CONTENT</h2>
+                    </section>
+                </div><!-- /page-inner -->
+            </div><!-- /page-left -->
+            <a href="#" class="back back-right" title="back to intro">&rarr;</a>
+            <a href="#" class="back back-left" title="back to intro">&larr;</a>
+        </div><!-- /splitlayout -->
+    </div><!-- /container -->
+
+
+// put this in cartfactory, remove analgous from store controller, inject neccesary factories (authservice and storeFCT)
+    addToCart: function (cake) {
+
+            if (AuthService.isAuthenticated()) {
+
+                AuthService.getLoggedInUser().then(function (user) {
+                    StoreFCT.addToAuthCart(user, cake, CartFactory);
+                });
+
+            } else {
+
+                StoreFCT.addToUnauthCart($localStorage, cartData, cake);
+
+            }
+        },
+        
+        removeFromCart : function (cake) {
+
+            if (AuthService.isAuthenticated()) {
+
+                AuthService.getLoggedInUser().then(function (user) {
+                    StoreFCT.removeFromAuthCart(user, cake, CartFactory);
+                });
+
+            } else {
+
+                StoreFCT.removeFromUnauthCart($localStorage, cartData, cake);
+
+            }
+
+        }

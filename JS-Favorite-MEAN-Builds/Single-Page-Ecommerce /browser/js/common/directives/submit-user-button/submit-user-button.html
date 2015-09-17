@@ -1,0 +1,3 @@
+<button type="submit" class="btn btn-default" ng-show="cart.length !== undefined || checkOut" ng-click="checkout(cart)">Submit & Checkout (cart full)</button>
+<button type="submit" class="btn btn-default" ng-show="cart.length !== undefined || checkOut" ui-sref = "storeViewProducts({storeId : currentStore})">Submit & Continue Shopping (cart full)</button>
+<button type="submit" class="btn btn-default" ng-hide= "cart.length !== undefined || checkOut">Submit</button>

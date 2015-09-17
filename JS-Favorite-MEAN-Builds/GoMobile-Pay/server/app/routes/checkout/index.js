@@ -27,53 +27,7 @@ var recreateTransactionHash = function(secret, timestamp){
   return "ti_"+hash.digest('hex');
 }
 
-//TO DO.  Sanitize any data being sent on req.body before being queried in our database
-
-router.post('/comm-eval', function (req, res){
-
-	var incumbentDomain = req.body.incumbentDomain
-
-	UserModel.findOne({webAppDomain : incumbentDomain}).exec().then(function (account) {
-		if(account){
-	  		console.log("tchopay evaluated incumbent as true")
-
-			return true
-		}
-		else{
-			return false
-		}
-	})
-		
-
-})
-
-
-
-
 router.post('/validate', function (req, res){
-	//REQ.BODY.transactionObject
-	
-	//OLD MODEL
-	// >Buyer Account*
-	// >Pin*
-	// >Location*
-	// >Amount
-	// >Description
-	// >WebAppTransId
-	// >Timestamp
-	// >ApiKey
-
-	//NEW MODEL
-	// >buyerAccount*
-	// >pin*
-	// >location*
-	// >chargeAmount
-	// >timestamp
-	// >apiKey
-	// >transactionHashValue
-	
-	//REQ.BODY.browserDomain
-	// >commDomain
 
 	//TO DO: Sanitize all data coming from req.body
 	//currently NOT sanitized
@@ -92,22 +46,15 @@ router.post('/validate', function (req, res){
 	var deleteTransactionMongoFail
 	var deleteTransaction
 
-
 	UserModel.findOne({apiKey : req.body.transactionObject.apiKey }).exec().then(function (account) {
-		// console.log("get account outcome,", account)
-
-		//Authenticate Browser Domain
-		// console.log("browser auth: ", req.body.browserDomain === account.webAppDomain);
-		
+	
+		//Authenticate Browser Domain		
 		if(req.body.browserDomain === account.webAppDomain){
 			
 			//recreate hash from database apiSecret, given timestamp
 			var recreatedHash = recreateTransactionHash(account.apiSecret, req.body.transactionObject.timestamp)
 
-			// console.log("recreated Hash: ", recreatedHash)
-
 			//Authenticated by Hash Cryptography (Hash Recreation and Comparison)
-			// console.log("hash and rehash reval: ", recreatedHash === req.body.transactionObject.transactionHashValue)
 			if(recreatedHash === req.body.transactionObject.transactionHashValue){
 				
 				var transactionDocument = {
@@ -121,8 +68,6 @@ router.post('/validate', function (req, res){
 				    vendorConfirmed: false,
 				    suspect: false
 				}
-
-				// console.log("transaction document to create: ",transactionDocument)
 
 				TransactionModel.create(transactionDocument, function (err, transactionDocumentInDatabase) {
 					//TO DO write sanitation.  This will prevent an error from ever happening on document save.
@@ -145,10 +90,7 @@ router.post('/validate', function (req, res){
 
 					}
 
-					// console.log("TRANSACTION OBJECT TO BE SENT TO BANK:", objectToTchoTcho)
-
 					//CALL TCHOTCHO 
-
 					//(imagine call to tcho tcho has happened)
 
 					var tchoTchoProcessing = function (){
@@ -198,47 +140,6 @@ router.post('/validate', function (req, res){
 			domainError= true;
 		}
 
-		//PAYMENT SUCCESS HANDLER
-		// if(paymentSuccess){
-
-		// 	//POST PAYMENT SUCCESS TO WEB APP SERVER
-		// 	request.post({url: callbackUrl, form:
-		// 								{
-		// 									confirmation: true,
-		// 									chargeAmount: transactionDocumentInDatabase.chargeAmount,
-		// 									webAppTransactionId: req.body.transactionObject.webAppTransactionId,
-		// 									timestamp: req.body.transactionObject.timestamp,
-		// 									//TO DO: sanitize outcome obj for account information
-		// 									outcome: paymentSuccessObj 
-		// 								}
-
-		// 	},function(err, httpResponse, body){
-		// 		if(err){
-		// 			//TO DO: SUSPEND API KEY 
-		// 			//Automated Twilio Email
-		// 			//Internal Alert to us
-
-		// 			//delete the transaction
-		// 			deleteTransaction = true
-		// 			return next(err)
-					
-
-		// 		}
-
-		// 		//SEND SUCCESS TO iFRAME
-		// 		var SuccessObject = {
-		// 			merchantError: false,
-		// 			//TO DO: this will need to be updated with the tchotcho api
-		// 			paymentError: {
-		// 				key: false,
-		// 				pinError: false,
-		// 				accountError: false
-		// 			}
-		// 		}
-		// 		res.send(SuccessObject)
-		// 	})
-		// }
-
 		//DELETE TRANSACTION DOCUMENT
 		if(deleteTransaction){
 			//Look up transaction in our database and delete it
@@ -278,7 +179,7 @@ router.post('/validate', function (req, res){
 				    timestamp: req.body.transactionObject.timestamp,
 				    //TO DO set these properties
 				    outcome: null,
-				    nullifyTransaction: false,
+				    nullifyTransaction: false
 
 			}	
 
@@ -330,59 +231,39 @@ router.post('/validate', function (req, res){
 						accountError: false
 					}
 				}
-
 				if(deleteTransactionMongoFail) lookupErrorObject.ourFault = true
-
 				res.send(lookupErrorObject)
-
 	}
 });
 
-
-
-
 router.post('/confirm-transaction', function (req, res){
+	//1. TO DO: Sanitize value being searched
 
 	var confirmTransactionOutcomeObject = req.body
-
-	//Sanitize value being searched
-
-	// console.log("1. In confirm receipt route: ", req.body)
-
+	
+	// 2. find transaction to confirm receipt
 	TransactionModel.findOne({timestamp : req.body.timestamp}).exec().then(function (transaction) {
 		if(transaction){
 
-			// console.log("2. found transaction to confirm receipt: ", transaction)
-
+			//3. find user account for transaction to rehash
 			UserModel.findOne({ _id : transaction.user }).exec().then(function (account) {
 
-				// console.log("3. found user account for transaction to rehash: ", account)
-
+				//4. authenticate by Hash Cryptography (Hash Recreation and Comparison)
 				var recreatedHash = createOutcomeHash(req.body.key, account.apiSecret, req.body.timestamp)
 
-				// console.log("4. evaluate hash to authenticate confirmation: ", recreatedHash === req.body.hashed)
-
-				//Authenticated by Hash Cryptography (Hash Recreation and Comparison)
 				if(recreatedHash === req.body.hashed){
 
+			  		//5. set confirmed true and send
 			  		req.body.confirmed = true
-
 			  		transaction.vendorConfirmed = true;
 			  		transaction.save()
-
-					// console.log("5. setting confirmed true and sending req.body: ", req.body)  	
-					console.log("RECEIPT SENT TO WEB APP SERVER.")		
-
 
 			  		res.send(req.body);
 			  	}
 		  	})
-
 		}
 		else{
 
 		}
 	})
-		
-
 })

@@ -27,10 +27,7 @@ router.get('/:tchoPayId', ensureAuthenticated, function (req, res){
 	//Auth Check: is this the user logged in server
 	if(req.user.tchoPayId === req.params.tchoPayId){
 		var account = req.params.tchoPayId
-		// console.log("just got account info")
-
 		UserModel.findOne({tchoPayId : account }).exec().then(function (account) {
-			// console.log("get account route successful,", account)
 			res.send(account);
 		});
 	}else{
@@ -39,14 +36,10 @@ router.get('/:tchoPayId', ensureAuthenticated, function (req, res){
 });
 
 
-
-
 router.put('/edit', ensureAuthenticated, function (req, res){
 	//Auth Check 1: is this the user logged in server
 	if(req.user.tchoPayId === req.body.tchoPayId){
-		
-		// console.log("req.body hitting edit route,",req.body)
-
+	
 		var rewriteUserDocument = function(property){
 			UserModel.findOne({tchoPayId: req.body.tchoPayId}).exec().then(function (user){
 				//Auth Check 2: confirm supplied password before allowing modification of properties to database
@@ -59,7 +52,6 @@ router.put('/edit', ensureAuthenticated, function (req, res){
 					}
 					user.save(function(err, user){
 						if(err) return next(err)
-						// console.log("user rewrite saved", user)
 						res.send(user);
 					})
 				}else{

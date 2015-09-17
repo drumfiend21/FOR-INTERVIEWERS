@@ -1,0 +1,21 @@
+<div ng-show="loading">
+	<loading-gif></loading-gif>
+</div>
+<button ui-sref="adminHome({storeId: storeId })">Back to Admin Home</button>
+<h1>{{cateName}} List</h1>
+
+<div ng-repeat="item in itemList | orderBy: 'name'">
+	<div ng-hide="activeEditId === item._id">
+		<h3>{{item.name}} <span ng-show="cateName !== 'Shape'">- {{item.price | currency}}</span></h3>
+		<p>{{item.description}}</p>
+		<button ng-click="showEditItem(item._id)">Edit</button>
+		<button ng-click="deleteItem(item._id)">Delete</button>
+	</div>
+	<admin-item-form ng-show="!newItem"></admin-item-form>
+	<hr>
+</div>
+<br/>
+<br/>
+<button ng-show="!newItem" ng-click="newItem = true">New {{cateName}}</button>
+
+<admin-item-form></admin-item-form>

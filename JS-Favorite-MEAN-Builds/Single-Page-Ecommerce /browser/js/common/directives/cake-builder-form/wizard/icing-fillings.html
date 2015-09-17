@@ -1,0 +1,38 @@
+<br>
+
+<span>Icing</span>
+<select ng-model="cake.icing" ng-change="update('icing', cake.icing)" data-ng-options="icing as icing.name for icing in icings">
+    <option value="">Select Shape</option>
+</select>
+{{currentPrices.icing.name}}
+
+<div id="layerOne">
+    <br>
+    <span>Layer One Filling</span>
+
+    <select ng-model="cake.layers[0].filling" ng-change="update('layers', cake.layers[0].filling, '1')" data-ng-options="filling as filling.name for filling in fillings">
+        <option value="">Select Filling</option>
+    </select>
+    {{currentPrices['layers'][0]['filling'].name}}
+
+
+
+</div>
+<div id="layerTwo" ng-show="layerTwo">
+    <br>
+    <span>Layer Two Filling</span>
+
+    <select ng-model="cake.layers[1].filling" ng-change="update('layers', cake.layers[1].filling, '2')" data-ng-options="filling as filling.name for filling in fillings">
+        <option value="">Select Filling</option>
+    </select>
+    {{currentPrices['layers'][1]['filling'].name}}
+</div>
+<div id="layerThree" ng-show="layerThree">
+    <br>
+    <span>Layer Three Filling</span>
+
+    <select ng-model="cake.layers[2].filling" ng-change="update('layers', cake.layers[2].filling, '3')" data-ng-options="filling as filling.name for filling in fillings">
+        <option value="">Select Filling</option>
+    </select>
+    {{currentPrices['layers'][2]['filling'].name}}
+</div>

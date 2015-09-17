@@ -44,10 +44,8 @@ $("#checkout-button").on('click', function(){
 
   //LISTEN FOR MESSAGES FROM IFRAME
   window.addEventListener("message", function(event){
-    // console.log("web app registered message from iframe: ", event.origin)
     if(event.origin === testingiFrameDomain){
       if(event.data.hasOwnProperty("key") && event.data.hasOwnProperty("hashed")){
-        console.log("WEB APP FRONT END RECEIVED OUTCOME!  We will now send to our back end: ", event.data)
         
         $.post("/api/orders/confirm", event.data)
         .done(function( data ) {
@@ -58,8 +56,6 @@ $("#checkout-button").on('click', function(){
           //1. received back from tchopay but not confirmed
           //2. did not hear back from tchopay
           //3. success
-
-          console.log("received final confirmation from web app back end server", data)
 
           //Message TchoPay transaction initialization information
           var frame = document.getElementById('tchopay-iframe');

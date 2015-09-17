@@ -1,0 +1,25 @@
+<form name="reviewForm" ng-submit="reviewForm.$valid && saveReview(review)">
+
+	<input type="hidden" name="productId" ng-model="review.productId" value="{{ review.productId }}">
+	<input type="hidden" name="userId" ng-model="review.user" value="{{ review.user }}">
+	<input type="hidden" name="type" ng-model="review.category" value="{{ review.category }}">
+
+	<!-- <pre>{{ newTeamForm | json }}</pre> -->
+	<div class="form-group">
+		<label for="shortSummary"> Short Summary</label>
+		<input type="text" name="shortSummary" ng-model="review.shortSummary" class="form-control" required>
+	</div>
+	
+	<div class="form-group">
+		<label for="stars">Stars</label>
+		<input type="number" name="stars" ng-model="review.name" class="form-control" min="1" max="5"required>
+	</div>
+
+	<div class="form-group">
+		<label for="description"> Description</label>
+		<textarea type="text" name="description" ng-model="review.description" class="form-control"required></textarea>
+	</div>
+
+    <button type="submit" class="btn btn-default">Submit</button>
+    <a class="btn">Cancel</a>
+</form>

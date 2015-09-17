@@ -1,0 +1,31 @@
+<div id="numOrdered" ng-show="user.admin === false || user === undefined">
+	<br>
+	<span>How many would you like to order?</span>
+	<error-message ng-show="cake.numOrdered.$touched && cake.numOrdered.$error.required">
+	    Cake numOrdered is a required field.
+	</error-message>
+	<error-message ng-show="cake.numOrdered.$error.minlength">
+	    Your cake name needs to be atleast 1 character long.
+	</error-message>
+	<input ng-model="cake.numOrdered" ng-change="update('numOrdered')" type="text" ng-minlength="1" ><br>
+	<br>
+</div>
+
+<div id="adminQuantity" ng-show = "user.admin === true">
+	<br>
+	<span>How many would you like to stock?</span>
+	<error-message ng-show="cake.quantity.$touched && cake.quantity.$error.required">
+	    Cake quantity is a required field.
+	</error-message>
+	<error-message ng-show="cake.quantity.$error.minlength">
+	    Your cake name needs to be atleast 1 character long.
+	</error-message>
+	<input ng-model="cake.quantity" ng-change="update('quantity')" type="text" ng-minlength="1" ><br>
+	<br>
+</div>
+
+<p><b>Cake Price</b></p>
+<p>${{cake.price}}</p>
+
+
+<button type="submit" >Build Cake!</button>
